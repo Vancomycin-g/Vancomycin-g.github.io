@@ -71,10 +71,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-互联网ssh登录Linux虚拟机大致思路" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/17/%E4%BA%92%E8%81%94%E7%BD%91ssh%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%A7%E8%87%B4%E6%80%9D%E8%B7%AF/" class="article-date">
+  <time class="dt-published" datetime="2021-07-17T08:36:40.000Z" itemprop="datePublished">2021-07-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/17/%E4%BA%92%E8%81%94%E7%BD%91ssh%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%A7%E8%87%B4%E6%80%9D%E8%B7%AF/">互联网ssh登录Linux虚拟机大致思路</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。"><a href="#问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。" class="headerlink" title="问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。"></a>问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。</h1><p>然后一阵摸索就有了下面的文章。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>若你动手实践能力强，推荐你看下思路然后自己摸索着做。<br>无论你虚拟机开启的是NAT模式还是桥接模式都行</p>
+<h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>1，虚拟机要开启ssh服务。<br>2，主机能够通过Xshell7等登录到虚拟机，检验ssh服务是否真正开启<br>3，然后使用花生壳把虚拟机的ip地址端口映射到互联网中。<br>4，然后使用映射的ip地址以及端口就可以使用ssh命令登录了</p>
+<h1 id="过程："><a href="#过程：" class="headerlink" title="过程："></a>过程：</h1><p>接下来使用xshell来演示。网络一搜就有安装包。<br>1.首先能够用主机能够与虚拟机相互ping通。详见<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51478862/article/details/116179264">文章</a><br>2.Linux开启ssh服务用xshell登录，配置时间有点久忘记了。。。。，自行百度吧，<br>3.用xshell登录。执行命令：<code>ssh 用户名@ip地址:端口号</code><br>若，使用的是NAT模式也可以用其他LInux系统登录 <code>ssh  -p 端口号 用户名@ip地址</code><br>端口号一般默认为22</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625043451992-99d52412-5481-4c18-8b92-21246df87d4d.png#align=left&display=inline&height=163&margin=[objectObject]&name=image.png&originHeight=326&originWidth=656&size=22337&status=done&style=none&width=328" alt="image.png"><br>执行<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625043468139-d51cf200-c001-4ce4-a6df-6eff96661678.png#align=left&display=inline&height=570&margin=[objectObject]&name=image.png&originHeight=1140&originWidth=1039&size=101621&status=done&style=none&width=519.5" alt="image.png"><br>输入密码就行了<br>4，然后下载个花生壳注册好后<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625067729226-2a80c3ae-d4a7-4465-b340-7cc9073c6b88.png#align=left&display=inline&height=550&name=image.png&originHeight=1099&originWidth=1760&size=195999&status=done&style=none&width=880" alt="image.png"><br>点击加号进行映射，我的Linux的ip为192.168.18.136，配置如下：<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625068026312-7d9729e9-9ea0-4573-aa8b-ff603eff7d41.png#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1080&originWidth=1760&size=136317&status=done&style=none&width=880" alt="image.png"><br>外网域经过DNS解析会得到IP地址<br>进行诊断会判断是否配置好<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625068255446-be56dbb1-6f8d-492b-b471-f345a800ecc0.png#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1080&originWidth=1760&size=209161&status=done&style=none&width=880" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625068350705-9175a036-b0a0-46cb-adb5-35f24ff3d7c1.png#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1080&originWidth=1760&size=135330&status=done&style=none&width=880" alt="image.png"><br>若配置不对就会报错，我上面的IP地址填错了，少个2.。。。<br>点击编辑进行更改后<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625068589246-ffb22e19-dcc5-40fb-841b-46d028ae8f30.png#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1080&originWidth=1760&size=148216&status=done&style=none&width=880" alt="image.png"><br>域名：406ah79430.wicp.vip经过DNS解析后就会得到IP:103.46.128.45<br>端口为：29633</p>
+<h1 id="检验："><a href="#检验：" class="headerlink" title="检验："></a>检验：</h1><p>1.同局域网下：用xshell登录：<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625068776195-c2047eb2-30b7-40db-8dee-ecf01516be8c.png#align=left&display=inline&height=176&margin=%5Bobject%20Object%5D&name=image.png&originHeight=351&originWidth=815&size=31225&status=done&style=none&width=407.5" alt="image.png"><br>2。用手机Linux，用流量登录(不在一个局域网下）<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625069087017-43d0c082-6365-4833-b94d-616ad8cbc612.png#align=left&display=inline&height=481&margin=%5Bobject%20Object%5D&name=image.png&originHeight=962&originWidth=432&size=460253&status=done&style=none&width=216" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625069181562-2e5946e6-b252-4d3e-abd1-deead7d356cb.png#align=left&display=inline&height=149&margin=%5Bobject%20Object%5D&name=image.png&originHeight=297&originWidth=606&size=235813&status=done&style=none&width=303" alt="image.png"><br>ok只要能联上网能使用ssh命令就可以登上自己的虚拟机了。美滋滋！！！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/07/17/%E4%BA%92%E8%81%94%E7%BD%91ssh%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%A7%E8%87%B4%E6%80%9D%E8%B7%AF/" data-id="ckr7ju2lx00010oe9ec6l4ich" data-title="互联网ssh登录Linux虚拟机大致思路" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Kali-WIIFI密码暴力破解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/07/17/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/" class="article-date">
-  <time class="dt-published" datetime="2021-07-17T07:47:51.277Z" itemprop="datePublished">2021-07-17</time>
+  <time class="dt-published" datetime="2021-07-17T08:02:55.525Z" itemprop="datePublished">2021-07-17</time>
 </a>
     
   </div>
@@ -90,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/17/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/" data-id="ckr7gx8wl0000r0e9besohk48" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/07/17/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/" data-id="ckr7ju2lz00020oe990n2963v" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -125,41 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/16/%E7%94%A8%E4%BA%92%E8%81%94%E7%BD%91%E9%80%9A%E8%BF%87ssh%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/" data-id="ckr7gx8ws0002r0e96xmacpcw" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-互联网ssh登录Linux虚拟机大致思路" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/07/16/%E4%BA%92%E8%81%94%E7%BD%91ssh%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%A7%E8%87%B4%E6%80%9D%E8%B7%AF/" class="article-date">
-  <time class="dt-published" datetime="2021-07-16T14:48:03.384Z" itemprop="datePublished">2021-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。"><a href="#问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。" class="headerlink" title="问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。"></a>问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。</h1><p>然后一阵摸索就有了下面的文章。</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>若你动手实践能力强，推荐你看下思路然后自己摸索着做。<br>无论你虚拟机开启的是NAT模式还是桥接模式都行</p>
-<h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>1，虚拟机要开启ssh服务。<br>2，主机能够通过Xshell7等登录到虚拟机，检验ssh服务是否真正开启<br>3，然后使用花生壳把虚拟机的ip地址端口映射到互联网中。<br>4，然后使用映射的ip地址以及端口就可以使用ssh命令登录了</p>
-<h1 id="过程："><a href="#过程：" class="headerlink" title="过程："></a>过程：</h1><p>接下来使用xshell来演示。网络一搜就有安装包。<br>1.首先能够用主机能够与虚拟机相互ping通。详见<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51478862/article/details/116179264">文章</a><br>2.Linux开启ssh服务用xshell登录，配置时间有点久忘记了。。。。，自行百度吧，<br>3.用xshell登录。执行命令：<code>ssh 用户名@ip地址:端口号</code><br>若，使用的是NAT模式也可以用其他LInux系统登录 <code>ssh  -p 端口号 用户名@ip地址</code><br>端口号一般默认为22</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625043451992-99d52412-5481-4c18-8b92-21246df87d4d.png#align=left&display=inline&height=163&margin=[objectObject]&name=image.png&originHeight=326&originWidth=656&size=22337&status=done&style=none&width=328" alt="image.png"><br>执行<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625043468139-d51cf200-c001-4ce4-a6df-6eff96661678.png#align=left&display=inline&height=570&margin=[objectObject]&name=image.png&originHeight=1140&originWidth=1039&size=101621&status=done&style=none&width=519.5" alt="image.png"><br>输入密码就行了<br>4，然后下载个花生壳注册好后<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625067729226-2a80c3ae-d4a7-4465-b340-7cc9073c6b88.png#align=left&display=inline&height=550&name=image.png&originHeight=1099&originWidth=1760&size=195999&status=done&style=none&width=880" alt="image.png"><br>点击加号进行映射，我的Linux的ip为192.168.18.136，配置如下：<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625068026312-7d9729e9-9ea0-4573-aa8b-ff603eff7d41.png#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1080&originWidth=1760&size=136317&status=done&style=none&width=880" alt="image.png"><br>外网域经过DNS解析会得到IP地址<br>进行诊断会判断是否配置好<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625068255446-be56dbb1-6f8d-492b-b471-f345a800ecc0.png#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1080&originWidth=1760&size=209161&status=done&style=none&width=880" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625068350705-9175a036-b0a0-46cb-adb5-35f24ff3d7c1.png#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1080&originWidth=1760&size=135330&status=done&style=none&width=880" alt="image.png"><br>若配置不对就会报错，我上面的IP地址填错了，少个2.。。。<br>点击编辑进行更改后<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625068589246-ffb22e19-dcc5-40fb-841b-46d028ae8f30.png#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1080&originWidth=1760&size=148216&status=done&style=none&width=880" alt="image.png"><br>域名：406ah79430.wicp.vip经过DNS解析后就会得到IP:103.46.128.45<br>端口为：29633</p>
-<h1 id="检验："><a href="#检验：" class="headerlink" title="检验："></a>检验：</h1><p>1.同局域网下：用xshell登录：<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625068776195-c2047eb2-30b7-40db-8dee-ecf01516be8c.png#align=left&display=inline&height=176&margin=%5Bobject%20Object%5D&name=image.png&originHeight=351&originWidth=815&size=31225&status=done&style=none&width=407.5" alt="image.png"><br>2。用手机Linux，用流量登录(不在一个局域网下）<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625069087017-43d0c082-6365-4833-b94d-616ad8cbc612.png#align=left&display=inline&height=481&margin=%5Bobject%20Object%5D&name=image.png&originHeight=962&originWidth=432&size=460253&status=done&style=none&width=216" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625069181562-2e5946e6-b252-4d3e-abd1-deead7d356cb.png#align=left&display=inline&height=149&margin=%5Bobject%20Object%5D&name=image.png&originHeight=297&originWidth=606&size=235813&status=done&style=none&width=303" alt="image.png"><br>ok只要能联上网能使用ssh命令就可以登上自己的虚拟机了。美滋滋！！！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/16/%E4%BA%92%E8%81%94%E7%BD%91ssh%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%A7%E8%87%B4%E6%80%9D%E8%B7%AF/" data-id="ckr7gx8wq0001r0e9bf0pbrau" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/07/16/%E7%94%A8%E4%BA%92%E8%81%94%E7%BD%91%E9%80%9A%E8%BF%87ssh%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/" data-id="ckr7ju2m400050oe9ghw47ui0" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -178,6 +192,13 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+    </div>
+  </div>
+
 
   
     
@@ -202,15 +223,15 @@
       <ul>
         
           <li>
+            <a href="/2021/07/17/%E4%BA%92%E8%81%94%E7%BD%91ssh%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%A7%E8%87%B4%E6%80%9D%E8%B7%AF/">互联网ssh登录Linux虚拟机大致思路</a>
+          </li>
+        
+          <li>
             <a href="/2021/07/17/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/">(no title)</a>
           </li>
         
           <li>
             <a href="/2021/07/16/%E7%94%A8%E4%BA%92%E8%81%94%E7%BD%91%E9%80%9A%E8%BF%87ssh%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/16/%E4%BA%92%E8%81%94%E7%BD%91ssh%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%A7%E8%87%B4%E6%80%9D%E8%B7%AF/">(no title)</a>
           </li>
         
       </ul>
