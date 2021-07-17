@@ -46,7 +46,7 @@
 			<img src="/img/z.gif" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">一路烟霞</a></h1>
+		  <h1 class="header-author"><a href="/">虚无</a></h1>
 		</hgroup>
 		
 
@@ -60,6 +60,8 @@
 				<li><a target="_blank" rel="noopener" href="https://www.yuque.com/u2395445">语雀🐒</a></li>
 	        
 				<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51478862">csdn</a></li>
+	        
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -111,10 +113,12 @@
 				<img src="//img/z.gif" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">一路烟霞</h1>
+			  <h1 class="header-author js-header-author">虚无</h1>
 			</hgroup>
 			
 			
+			
+				
 			
 				
 			
@@ -144,13 +148,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a target="_blank" rel="noopener" href="https://vancomycin-g.github.io/">主页🎉</a></li>
+					<li style="width: 20%"><a target="_blank" rel="noopener" href="https://vancomycin-g.github.io/">主页🎉</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 20%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 25%"><a target="_blank" rel="noopener" href="https://www.yuque.com/u2395445">语雀🐒</a></li>
+					<li style="width: 20%"><a target="_blank" rel="noopener" href="https://www.yuque.com/u2395445">语雀🐒</a></li>
 		        
-					<li style="width: 25%"><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51478862">csdn</a></li>
+					<li style="width: 20%"><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51478862">csdn</a></li>
+		        
+					<li style="width: 20%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -166,110 +172,6 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-用互联网通过ssh远程登录Linux虚拟机" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。"><a href="#问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。" class="headerlink" title="问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。"></a>问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。</h1><p>然后一阵摸索就有了下面的文章。</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>若你动手实践能力强，推荐你看下思路然后自己摸索着做。<br>无论你虚拟机开启的是NAT模式还是桥接模式都行</p>
-<h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>1，虚拟机要开启ssh服务。<br>2，主机能够通过Xshell7等登录到虚拟机，检验ssh服务是否真正开启<br>3，然后使用花生壳把虚拟机的ip地址端口映射到互联网中。<br>4，然后使用映射的ip地址以及端口就可以使用ssh命令登录了</p>
-<h1 id="过程："><a href="#过程：" class="headerlink" title="过程："></a>过程：</h1><p>接下来使用xshell来演示。网络一搜就有安装包。<br>1.首先能够用主机能够与虚拟机相互ping通。详见<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51478862/article/details/116179264">文章</a><br>2.Linux开启ssh服务用xshell登录，配置时间有点久忘记了。。。。，自行百度吧，<br>3.用xshell登录。执行命令：<code>ssh 用户名@ip地址:端口号</code><br>若，使用的是NAT模式也可以用其他LInux系统登录 <code>ssh  -p 端口号 用户名@ip地址</code><br>端口号一般默认为22</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/aa3fbddc53c8cc6573fcc4264f09164c.png#align=left&display=inline&height=163&margin=[objectObject]&name=image.png&originHeight=326&originWidth=656&size=22337&status=done&style=none&width=328" alt="image.png"><br>执行<br><img src="https://img-blog.csdnimg.cn/img_convert/ba718b7ab84a32beafb2d38fd35ec56d.png#align=left&display=inline&height=570&margin=[objectObject]&name=image.png&originHeight=1140&originWidth=1039&size=101621&status=done&style=none&width=519.5" alt="image.png"><br>输入密码就行了<br>4，然后下载个花生壳注册好后<br><img src="https://img-blog.csdnimg.cn/img_convert/7edf0fbcdcf1ae71c1c06b36831278a9.png#align=left&display=inline&height=550&margin=[objectObject]&name=image.png&originHeight=1099&originWidth=1760&size=195999&status=done&style=none&width=880" alt="image.png"><br>点击加号进行映射，我的Linux的ip为192.168.18.136，配置如下：<br><img src="https://img-blog.csdnimg.cn/20210701001335206.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxNDc4ODYy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>外网域经过DNS解析会得到IP地址<br>进行诊断会判断是否配置好<br><img src="https://img-blog.csdnimg.cn/img_convert/55c4502e6e41bf7e975bdc3af84351ca.png#align=left&display=inline&height=540&margin=[objectObject]&name=image.png&originHeight=1080&originWidth=1760&size=209161&status=done&style=none&width=880" alt="image.png"><br><img src="https://img-blog.csdnimg.cn/img_convert/d372f7d8bf9cdefe4d8af519cf1c1a4c.png#align=left&display=inline&height=540&margin=[objectObject]&name=image.png&originHeight=1080&originWidth=1760&size=135330&status=done&style=none&width=880" alt="image.png"><br>若配置不对就会报错，我上面的IP地址填错了，少个2.。。。<br>点击编辑进行更改后<br><img src="https://img-blog.csdnimg.cn/img_convert/2deaf36aa74ef48bcb640a0cc6c3abac.png#align=left&display=inline&height=540&margin=[objectObject]&name=image.png&originHeight=1080&originWidth=1760&size=148216&status=done&style=none&width=880" alt="image.png"><br>域名：406ah79430.wicp.vip经过DNS解析后就会得到IP:103.46.128.45<br>端口为：29633</p>
-<h1 id="检验："><a href="#检验：" class="headerlink" title="检验："></a>检验：</h1><p>1.同局域网下：用xshell登录：<br><img src="https://img-blog.csdnimg.cn/img_convert/cfbea3c3f7c910967d9e9007983c4bda.png#align=left&display=inline&height=176&margin=[objectObject]&name=image.png&originHeight=351&originWidth=815&size=31225&status=done&style=none&width=407.5" alt="image.png"><br>2。用手机Linux，用流量登录(不在一个局域网下）<br><img src="https://img-blog.csdnimg.cn/img_convert/6450b586417b92548be5ecdd0096214e.png#align=left&display=inline&height=481&margin=[objectObject]&name=image.png&originHeight=962&originWidth=432&size=460253&status=done&style=none&width=216" alt="image.png"><br><img src="https://img-blog.csdnimg.cn/img_convert/11e90a85d315d05a8d3e8c87cc4c3040.png#align=left&display=inline&height=149&margin=[objectObject]&name=image.png&originHeight=297&originWidth=606&size=235813&status=done&style=none&width=303" alt="image.png"><br>ok只要能联上网能使用ssh命令就可以登上自己的虚拟机了。美滋滋！！！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/17/%E7%94%A8%E4%BA%92%E8%81%94%E7%BD%91%E9%80%9A%E8%BF%87ssh%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Kali-WIIFI密码暴力破解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>一，准备工作</strong><br>1，安装好了kali-linux虚拟机。<br>2，kali注册的用户身份为root,或者会更改为root用户。<br>3，准备一个无线网卡。<br><strong>二，打开虚拟机接入无线网卡</strong><br>1，以root身份运行终端模拟器。<br>2，为了避免网卡接入时出现扫描不到WiFi等其他问题（本人就出现了。。弄了好久才搞定），先把网卡接入到主机上。<br><img src="https://img-blog.csdnimg.cn/img_convert/43e41fc6f71a9fc098e6eb6c1ae03122.png#align=left&display=inline&height=955&margin=[objectObject]&name=image.png&originHeight=955&originWidth=1013&size=39184&status=done&style=none&width=1013" alt="image.png"><br>然后在主机上随便连接上一个WiFi后在连接到虚拟机。<br><img src="https://img-blog.csdnimg.cn/img_convert/18ef968f6627a483f1b64151723b5e28.png#align=left&display=inline&height=361&margin=[objectObject]&name=image.png&originHeight=361&originWidth=1450&size=72697&status=done&style=none&width=1450" alt="image.png"><br>如上图点击确定。<br><strong>三，判断网卡是否可以使用</strong><br>1，在模拟终端中输入iwconfig 用来查看网卡是否支持监听模式。<br><img src="https://img-blog.csdnimg.cn/img_convert/ae62de35ee7b4534b544c5a35cee926c.png#align=left&display=inline&height=464&margin=[objectObject]&name=image.png&originHeight=464&originWidth=1450&size=126721&status=done&style=none&width=1450" alt="image.png"><br>图中的若出现wlan0 应该就可以使用。此时mode:manage.<br>2，输入airmon-ng start wlan0<br><img src="https://img-blog.csdnimg.cn/img_convert/a0c221064836a51546936c64f9820a7c.png#align=left&display=inline&height=335&margin=[objectObject]&name=image.png&originHeight=335&originWidth=1513&size=147580&status=done&style=none&width=1513" alt="image.png"><br>3，然后再次输入iwconfig重新查看网卡状态<br><img src="https://img-blog.csdnimg.cn/img_convert/d030a452882b7ad1a2ae428e1a776604.png#align=left&display=inline&height=350&margin=[objectObject]&name=image.png&originHeight=350&originWidth=1495&size=155615&status=done&style=none&width=1495" alt="image.png"><br>此时，wlan0 中的mode变为了monitor就是监视功能开启了。<br>有的网卡名wlan0变为wlan0mon;要注意后面会用网卡名。<br>此时网卡就可以使用了。<br><strong>四，扫描wifi并监听，抓包。</strong><br>1，输入：airodump 网卡名<br><strong>开始扫描WiFi，按ctrl+c结束任务</strong></p>
-<p>BSSID为wifi的MAC地址，PWR为信号强弱程度，数值越小信号越强；#DATA为数据量，越大WiFi接入的设备就越多，CH为信道频率（频道），ESSID为wifi的名称，中文可能会有乱码。<br>2，注意选择WiFi时要以data数据量为第一参考。然后再参考信号强度。<br>选好后按ctrl+c停止扫描。<br>3，输入<br><strong>airodump-ng –bssid BSSID -c 信道频率（CH） -w 储存抓包存储的路径 wlan0mon</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/f5b38dc40e4f527fd33a12a74bf25b17.png#align=left&display=inline&height=547&margin=[objectObject]&name=image.png&originHeight=547&originWidth=1985&size=294025&status=done&style=none&width=1985" alt="image.png"></p>
-<p>图中彩线画的是接入WiFi的设备，当出现蓝线圈的<strong>WPA handshake,</strong> 时就代表抓包成功。<br>4.但，这是被动等待有新设备接入WiFi，这可能需要很长时间才能抓包成功，所以我们要主动出击。<br>再开一个终端，输入airepaly-ng -0 攻击次数 -a bssid -c 连接到WiFi的设备mac地址 网卡名<br>如<br><img src="https://img-blog.csdnimg.cn/img_convert/2c95e27604ca8f103ca970ffe1ebe7a1.png#align=left&display=inline&height=324&margin=[objectObject]&name=image.png&originHeight=324&originWidth=1777&size=227924&status=done&style=none&width=1777" alt="image.png"><br>(0 WiFi设备无限次数,-0 300则攻击300次。攻击原理是：先让设备掉线，设备会再自动连接，并发这个自动连接过程会进行三次握手，会发送tcp包（里面包含加密的密码数据），我方伪装成WiFi热点去窃取该数据包。我方窃取后即可用字典穷举法暴力破解加密的WiFi密码,<br>数据包里面的密码是哈希加密的，哈希加密只能正向)<br><strong>出现WPA handshake时，表示抓包成功</strong><br><strong>两个终端都按Ctrl+c停止，不然那边会一直断网</strong><br><strong>五，暴力破解。</strong><br>1，键入  <strong>aircrack-ng -a2 -b  bssid <strong>-w</strong> 字典路径 握手包路径 回车后开始爆破</strong><br><strong>如：</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/bff302571bd1fe9b171c9fa667c9bb7c.png#align=left&display=inline&height=70&margin=[objectObject]&name=image.png&originHeight=70&originWidth=2113&size=56138&status=done&style=none&width=2113" alt="image.png"><br><strong>然后就等待，看运气了</strong><br><strong>特别说明：暴力破解并不简单，需要足够强大的字典和时间，可以通过字典生成工具生成自己的字典，字典越强大越容易破解。</strong> 破解速度还与电脑算力有关。<br><img src="https://img-blog.csdnimg.cn/img_convert/a0760e9ceaa9cdbe1cc49f73b771e742.png#align=left&display=inline&height=766&margin=[objectObject]&name=image.png&originHeight=766&originWidth=1405&size=80646&status=done&style=none&width=1405" alt="image.png"><br><strong>这就没找到。。。。</strong><br>2，下面是另一种破解方式。<br> cowpatty -f 字典路径 -r 包的路径 -s wifi名字<br><img src="https://img-blog.csdnimg.cn/img_convert/59734fcf11b858819f1fbdd251404031.png#align=left&display=inline&height=159&margin=[objectObject]&name=image.png&originHeight=159&originWidth=1887&size=28970&status=done&style=none&width=1887" alt="image.png"><br>本文参考了<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44545251/article/details/100279827?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161502192116780271544099%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=161502192116780271544099&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-100279827.first_rank_v2_pc_rank_v29_10&utm_term=kaliwifi%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4">凡尘-追梦者</a>的博客，感谢！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/17/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
     <article id="post-互联网ssh登录Linux虚拟机大致思路" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -304,6 +206,11 @@
     </div>
     <div class="article-info article-info-index">
       
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
       
       
 	<div class="article-category tagcloud">
@@ -321,6 +228,141 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/07/17/%E4%BA%92%E8%81%94%E7%BD%91ssh%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%A7%E8%87%B4%E6%80%9D%E8%B7%AF/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Kali-WIIFI密码暴力破解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/17/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/">Kali-WIIFI密码暴力破解</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/17/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2021-07-17T08:36:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>一，准备工作</strong><br>1，安装好了kali-linux虚拟机。<br>2，kali注册的用户身份为root,或者会更改为root用户。<br>3，准备一个无线网卡。<br><strong>二，打开虚拟机接入无线网卡</strong><br>1，以root身份运行终端模拟器。<br>2，为了避免网卡接入时出现扫描不到WiFi等其他问题（本人就出现了。。弄了好久才搞定），先把网卡接入到主机上。<br><img src="https://img-blog.csdnimg.cn/img_convert/43e41fc6f71a9fc098e6eb6c1ae03122.png#align=left&display=inline&height=955&margin=[objectObject]&name=image.png&originHeight=955&originWidth=1013&size=39184&status=done&style=none&width=1013" alt="image.png"><br>然后在主机上随便连接上一个WiFi后在连接到虚拟机。<br><img src="https://img-blog.csdnimg.cn/img_convert/18ef968f6627a483f1b64151723b5e28.png#align=left&display=inline&height=361&margin=[objectObject]&name=image.png&originHeight=361&originWidth=1450&size=72697&status=done&style=none&width=1450" alt="image.png"><br>如上图点击确定。<br><strong>三，判断网卡是否可以使用</strong><br>1，在模拟终端中输入iwconfig 用来查看网卡是否支持监听模式。<br><img src="https://img-blog.csdnimg.cn/img_convert/ae62de35ee7b4534b544c5a35cee926c.png#align=left&display=inline&height=464&margin=[objectObject]&name=image.png&originHeight=464&originWidth=1450&size=126721&status=done&style=none&width=1450" alt="image.png"><br>图中的若出现wlan0 应该就可以使用。此时mode:manage.<br>2，输入airmon-ng start wlan0<br><img src="https://img-blog.csdnimg.cn/img_convert/a0c221064836a51546936c64f9820a7c.png#align=left&display=inline&height=335&margin=[objectObject]&name=image.png&originHeight=335&originWidth=1513&size=147580&status=done&style=none&width=1513" alt="image.png"><br>3，然后再次输入iwconfig重新查看网卡状态<br><img src="https://img-blog.csdnimg.cn/img_convert/d030a452882b7ad1a2ae428e1a776604.png#align=left&display=inline&height=350&margin=[objectObject]&name=image.png&originHeight=350&originWidth=1495&size=155615&status=done&style=none&width=1495" alt="image.png"><br>此时，wlan0 中的mode变为了monitor就是监视功能开启了。<br>有的网卡名wlan0变为wlan0mon;要注意后面会用网卡名。<br>此时网卡就可以使用了。<br><strong>四，扫描wifi并监听，抓包。</strong><br>1，输入：airodump 网卡名<br><strong>开始扫描WiFi，按ctrl+c结束任务</strong></p>
+<p>BSSID为wifi的MAC地址，PWR为信号强弱程度，数值越小信号越强；#DATA为数据量，越大WiFi接入的设备就越多，CH为信道频率（频道），ESSID为wifi的名称，中文可能会有乱码。<br>2，注意选择WiFi时要以data数据量为第一参考。然后再参考信号强度。<br>选好后按ctrl+c停止扫描。<br>3，输入<br><strong>airodump-ng –bssid BSSID -c 信道频率（CH） -w 储存抓包存储的路径 wlan0mon</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/f5b38dc40e4f527fd33a12a74bf25b17.png#align=left&display=inline&height=547&margin=[objectObject]&name=image.png&originHeight=547&originWidth=1985&size=294025&status=done&style=none&width=1985" alt="image.png"></p>
+<p>图中彩线画的是接入WiFi的设备，当出现蓝线圈的<strong>WPA handshake,</strong> 时就代表抓包成功。<br>4.但，这是被动等待有新设备接入WiFi，这可能需要很长时间才能抓包成功，所以我们要主动出击。<br>再开一个终端，输入airepaly-ng -0 攻击次数 -a bssid -c 连接到WiFi的设备mac地址 网卡名<br>如<br><img src="https://img-blog.csdnimg.cn/img_convert/2c95e27604ca8f103ca970ffe1ebe7a1.png#align=left&display=inline&height=324&margin=[objectObject]&name=image.png&originHeight=324&originWidth=1777&size=227924&status=done&style=none&width=1777" alt="image.png"><br>(0 WiFi设备无限次数,-0 300则攻击300次。攻击原理是：先让设备掉线，设备会再自动连接，并发这个自动连接过程会进行三次握手，会发送tcp包（里面包含加密的密码数据），我方伪装成WiFi热点去窃取该数据包。我方窃取后即可用字典穷举法暴力破解加密的WiFi密码,<br>数据包里面的密码是哈希加密的，哈希加密只能正向)<br><strong>出现WPA handshake时，表示抓包成功</strong><br><strong>两个终端都按Ctrl+c停止，不然那边会一直断网</strong><br><strong>五，暴力破解。</strong><br>1，键入  <strong>aircrack-ng -a2 -b  bssid <strong>-w</strong> 字典路径 握手包路径 回车后开始爆破</strong><br><strong>如：</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/bff302571bd1fe9b171c9fa667c9bb7c.png#align=left&display=inline&height=70&margin=[objectObject]&name=image.png&originHeight=70&originWidth=2113&size=56138&status=done&style=none&width=2113" alt="image.png"><br><strong>然后就等待，看运气了</strong><br><strong>特别说明：暴力破解并不简单，需要足够强大的字典和时间，可以通过字典生成工具生成自己的字典，字典越强大越容易破解。</strong> 破解速度还与电脑算力有关。<br><img src="https://img-blog.csdnimg.cn/img_convert/a0760e9ceaa9cdbe1cc49f73b771e742.png#align=left&display=inline&height=766&margin=[objectObject]&name=image.png&originHeight=766&originWidth=1405&size=80646&status=done&style=none&width=1405" alt="image.png"><br><strong>这就没找到。。。。</strong><br>2，下面是另一种破解方式。<br> cowpatty -f 字典路径 -r 包的路径 -s wifi名字<br><img src="https://img-blog.csdnimg.cn/img_convert/59734fcf11b858819f1fbdd251404031.png#align=left&display=inline&height=159&margin=[objectObject]&name=image.png&originHeight=159&originWidth=1887&size=28970&status=done&style=none&width=1887" alt="image.png"><br>本文参考了<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44545251/article/details/100279827?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161502192116780271544099%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=161502192116780271544099&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-100279827.first_rank_v2_pc_rank_v29_10&utm_term=kaliwifi%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4">凡尘-追梦者</a>的博客，感谢！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/17/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-用互联网通过ssh远程登录Linux虚拟机" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。"><a href="#问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。" class="headerlink" title="问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。"></a>问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。</h1><p>然后一阵摸索就有了下面的文章。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>若你动手实践能力强，推荐你看下思路然后自己摸索着做。<br>无论你虚拟机开启的是NAT模式还是桥接模式都行</p>
+<h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>1，虚拟机要开启ssh服务。<br>2，主机能够通过Xshell7等登录到虚拟机，检验ssh服务是否真正开启<br>3，然后使用花生壳把虚拟机的ip地址端口映射到互联网中。<br>4，然后使用映射的ip地址以及端口就可以使用ssh命令登录了</p>
+<h1 id="过程："><a href="#过程：" class="headerlink" title="过程："></a>过程：</h1><p>接下来使用xshell来演示。网络一搜就有安装包。<br>1.首先能够用主机能够与虚拟机相互ping通。详见<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51478862/article/details/116179264">文章</a><br>2.Linux开启ssh服务用xshell登录，配置时间有点久忘记了。。。。，自行百度吧，<br>3.用xshell登录。执行命令：<code>ssh 用户名@ip地址:端口号</code><br>若，使用的是NAT模式也可以用其他LInux系统登录 <code>ssh  -p 端口号 用户名@ip地址</code><br>端口号一般默认为22</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/aa3fbddc53c8cc6573fcc4264f09164c.png#align=left&display=inline&height=163&margin=[objectObject]&name=image.png&originHeight=326&originWidth=656&size=22337&status=done&style=none&width=328" alt="image.png"><br>执行<br><img src="https://img-blog.csdnimg.cn/img_convert/ba718b7ab84a32beafb2d38fd35ec56d.png#align=left&display=inline&height=570&margin=[objectObject]&name=image.png&originHeight=1140&originWidth=1039&size=101621&status=done&style=none&width=519.5" alt="image.png"><br>输入密码就行了<br>4，然后下载个花生壳注册好后<br><img src="https://img-blog.csdnimg.cn/img_convert/7edf0fbcdcf1ae71c1c06b36831278a9.png#align=left&display=inline&height=550&margin=[objectObject]&name=image.png&originHeight=1099&originWidth=1760&size=195999&status=done&style=none&width=880" alt="image.png"><br>点击加号进行映射，我的Linux的ip为192.168.18.136，配置如下：<br><img src="https://img-blog.csdnimg.cn/20210701001335206.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzUxNDc4ODYy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>外网域经过DNS解析会得到IP地址<br>进行诊断会判断是否配置好<br><img src="https://img-blog.csdnimg.cn/img_convert/55c4502e6e41bf7e975bdc3af84351ca.png#align=left&display=inline&height=540&margin=[objectObject]&name=image.png&originHeight=1080&originWidth=1760&size=209161&status=done&style=none&width=880" alt="image.png"><br><img src="https://img-blog.csdnimg.cn/img_convert/d372f7d8bf9cdefe4d8af519cf1c1a4c.png#align=left&display=inline&height=540&margin=[objectObject]&name=image.png&originHeight=1080&originWidth=1760&size=135330&status=done&style=none&width=880" alt="image.png"><br>若配置不对就会报错，我上面的IP地址填错了，少个2.。。。<br>点击编辑进行更改后<br><img src="https://img-blog.csdnimg.cn/img_convert/2deaf36aa74ef48bcb640a0cc6c3abac.png#align=left&display=inline&height=540&margin=[objectObject]&name=image.png&originHeight=1080&originWidth=1760&size=148216&status=done&style=none&width=880" alt="image.png"><br>域名：406ah79430.wicp.vip经过DNS解析后就会得到IP:103.46.128.45<br>端口为：29633</p>
+<h1 id="检验："><a href="#检验：" class="headerlink" title="检验："></a>检验：</h1><p>1.同局域网下：用xshell登录：<br><img src="https://img-blog.csdnimg.cn/img_convert/cfbea3c3f7c910967d9e9007983c4bda.png#align=left&display=inline&height=176&margin=[objectObject]&name=image.png&originHeight=351&originWidth=815&size=31225&status=done&style=none&width=407.5" alt="image.png"><br>2。用手机Linux，用流量登录(不在一个局域网下）<br><img src="https://img-blog.csdnimg.cn/img_convert/6450b586417b92548be5ecdd0096214e.png#align=left&display=inline&height=481&margin=[objectObject]&name=image.png&originHeight=962&originWidth=432&size=460253&status=done&style=none&width=216" alt="image.png"><br><img src="https://img-blog.csdnimg.cn/img_convert/11e90a85d315d05a8d3e8c87cc4c3040.png#align=left&display=inline&height=149&margin=[objectObject]&name=image.png&originHeight=297&originWidth=606&size=235813&status=done&style=none&width=303" alt="image.png"><br>ok只要能联上网能使用ssh命令就可以登上自己的虚拟机了。美滋滋！！！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/17/%E7%94%A8%E4%BA%92%E8%81%94%E7%BD%91%E9%80%9A%E8%BF%87ssh%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA/">展开全文 >></a>
         </p>
       
 
@@ -432,17 +474,28 @@
         </div>
       </div>
       <footer id="footer">
+ <!-- 引入不蒜子统计 -->
+<script async src="/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- 开始不蒜子统计 -->
+<span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>
+</span>
+
+<span id="busuanzi_container_site_uv" >
+        本站总访客<span id="busuanzi_value_site_uv"></span>
+</span>
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
     		&copy; 2021 John Doe
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      		<!--<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten --!>
       	</div>
     </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
