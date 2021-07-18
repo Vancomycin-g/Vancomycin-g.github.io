@@ -8,19 +8,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://vancomycin-g.github.io">
-  <title>标签 | 虚无的博客</title>
+  <title>xss笔记 | 虚无的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="渗透与测试专业的小白，如有不足之处请指教。欢迎大家一起交流">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="https://vancomycin-g.github.io/tags/index.html">
+  <meta name="description" content="注意：html对大小写不敏感，1,构建script直接插入alert(&quot;xss&quot;);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xss笔记">
+<meta property="og:url" content="https://vancomycin-g.github.io/2021/07/19/xss%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="虚无的博客">
-<meta property="og:description" content="渗透与测试专业的小白，如有不足之处请指教。欢迎大家一起交流">
+<meta property="og:description" content="注意：html对大小写不敏感，1,构建script直接插入alert(&quot;xss&quot;);">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-07-17T08:41:15.000Z">
-<meta property="article:modified_time" content="2021-07-18T10:39:29.964Z">
+<meta property="article:published_time" content="2021-07-18T16:03:58.000Z">
+<meta property="article:modified_time" content="2021-07-18T16:09:35.051Z">
 <meta property="article:author" content="虚无">
-<meta property="article:tag" content="渗透与测试,网络安全,web安全,Linux,mysql">
+<meta property="article:tag" content="xss">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
   
   
@@ -175,21 +176,22 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="tags-" class="article article-type-tags " itemscope itemprop="blogPost">
+            
+<article id="post-xss笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      标签
+      xss笔记
     </h1>
   
 
         
         
-<a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2021-07-17T08:41:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-17</time>
+<a href="/2021/07/19/xss%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-07-18T16:03:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-19</time>
 </a>
 
         <!-- 不蒜子统计 -->
@@ -202,69 +204,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="注意：html对大小写不敏感，"><a href="#注意：html对大小写不敏感，" class="headerlink" title="注意：html对大小写不敏感，"></a>注意：html对大小写不敏感，</h3><h4 id="1-构建script直接插入"><a href="#1-构建script直接插入" class="headerlink" title="1,构建script直接插入"></a>1,构建script直接插入</h4><script>alert("xss");</script>
+
+<span id="more"></span>
+
+<p>可以使用<strong>htmlspecialchars()使字符转化为字符实体来防止直接插入js代码</strong></p>
+<p>其中<code>&lt;，&quot;</code>和<code>&gt;</code>都被编码成了<code>&amp;lt,&amp;qout,&amp;gt</code>html字符实体</p>
+<h4 id="2-构造事件，不含有-lt-gt-字符避免-可以在input标签中使用"><a href="#2-构造事件，不含有-lt-gt-字符避免-可以在input标签中使用" class="headerlink" title="2,构造事件，不含有&lt;&gt;字符避免,可以在input标签中使用"></a>2,构造事件，不含有&lt;&gt;字符避免,可以在input标签中使用</h4><p>onMouseUp=”alert(document.domin)”</p>
+<h4 id="3-不含后-lt-gt-”字符-可以在input标签中使用"><a href="#3-不含后-lt-gt-”字符-可以在input标签中使用" class="headerlink" title="3,不含后&lt;&gt;”字符,可以在input标签中使用"></a>3,不含后&lt;&gt;”字符,可以在input标签中使用</h4><p>通过<code>&lt;input&gt;</code>标签的一些特殊事件来执行js代码</p>
+<p>构造代码：<code>onfocus=javascript:alert(&#39;xss&#39;) &gt; //</code></p>
+<h4 id="4，无法通过-lt-script-gt-，含有on字符串的标签时，构造-lt-a-href-javascript-alert-‘xss’-gt-xss"><a href="#4，无法通过-lt-script-gt-，含有on字符串的标签时，构造-lt-a-href-javascript-alert-‘xss’-gt-xss" class="headerlink" title="4，无法通过&lt;script&gt;，含有on字符串的标签时，构造&lt;a href=javascript:alert(‘xss’) &gt; xss"></a>4，无法通过<code>&lt;script&gt;，含有on字符串的</code>标签时，构造&lt;a href=javascript:alert(‘xss’) &gt; xss</a></h4><h4 id="5-双写关键字"><a href="#5-双写关键字" class="headerlink" title="5,双写关键字"></a>5,双写关键字</h4><p>比如会删除on字符串，可以写成oonn,这样就会得到on</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> temp=<span class="built_in">document</span>.URL;</span><br><span class="line"><span class="keyword">var</span> index=<span class="built_in">document</span>.URL.indexOf(<span class="string">&quot;content=&quot;</span>)+<span class="number">4</span>;</span><br><span class="line"><span class="keyword">var</span> par=temp.substring(index);</span><br><span class="line"><span class="built_in">document</span>.write(<span class="built_in">decodeURI</span>(par));</span><br><span class="line">&lt;script&gt;</span><br></pre></td></tr></table></figure>
+
+
       
 	  
-  <div class="tag-cloud">
-    <div class="tag-cloud-title">
-    TOTAl : 6
-    </div>
- 
-    <div class="tag-cloud-tags">
-     <a href="/tags/Linux/" style="font-size: 16px; color: #00f">Linux</a> <a href="/tags/biao/" style="font-size: 16px; color: #00f">biao</a> <a href="/tags/kali/" style="font-size: 16px; color: #00f">kali</a> <a href="/tags/xss/" style="font-size: 16px; color: #00f">xss</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 16px; color: #00f">笔记</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 16px; color: #00f">虚拟机</a>
-
-    </div>
-	 <style>
-        .category-list li{
-            display: inline-block;
-            margin: 0 1em .5em 0;
-            padding: 4px;
-            border: 1px solid green;
-            font-size: 1.2em;
-        }
-        .category-list a {
-            color: #ffffff;
-        }
-        .category-list-item {
-          background-color: #55daff;
-          border-radius: 15%;
-          opacity:0.5; 
-        }
-
-        .category-list-item:hover a {
-            color: #c16431;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .category-list-count {
-            margin-left: 2px;
-            font-size: .9em;
-        }
-        .article-entry ul li:before{
-            display: none;
-        }
-        
-        .tags {
-            max-width: 40em;
-            margin: 2em auto;
-            margin-top: 0em;
-        }
-        .tags a {
-            margin-right: 1em;
-            border-bottom: 1px solid blue;
-            line-height: 65px;
-            white-space: nowrap;
-        }
-        .tags a:hover {
-            border-bottom: 2px solid green;
-            font-style: italic;
-            color: #22323a;
-            text-decoration: none;
-        }
-    </style>
-  </div>
- 
-  
 
 <!-- 《添加版权声明 -->
 <!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
@@ -279,16 +233,16 @@
     
     <br>
     <strong class="create-time">发布时间：</strong>
-    2021-07-17
+    2021-07-19
     <br>
     <strong class="update-time">最后更新：</strong>
-    2021-07-18
+    2021-07-19
     <br>
     <strong class="article-titles">本文标题：</strong>
-    <a href="https://vancomycin-g.github.io/tags/index.html" title="标签" target="_blank">标签</a>
+    <a href="https://vancomycin-g.github.io/2021/07/19/xss笔记/" title="xss笔记" target="_blank">xss笔记</a>
     <br>
     <strong class="article-url">本文链接：</strong>
-    <a href="https://vancomycin-g.github.io/tags/index.html" title="标签" target="_blank">https://vancomycin-g.github.io/tags/index.html</a>
+    <a href="https://vancomycin-g.github.io/2021/07/19/xss笔记/" title="xss笔记" target="_blank">https://vancomycin-g.github.io/2021/07/19/xss笔记/</a>
     <br>
     <strong class="copyright">版权声明：</strong>
     本作品采用
@@ -339,7 +293,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">xss</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/xss//" class="article-tag-list-link color4">xss</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -350,6 +330,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2021/07/17/%E4%BA%92%E8%81%94%E7%BD%91ssh%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%A7%E8%87%B4%E6%80%9D%E8%B7%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">互联网ssh登录Linux虚拟机大致思路</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -371,7 +361,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9Ahtml%E5%AF%B9%E5%A4%A7%E5%B0%8F%E5%86%99%E4%B8%8D%E6%95%8F%E6%84%9F%EF%BC%8C"><span class="toc-number">1.</span> <span class="toc-text">注意：html对大小写不敏感，</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%9E%84%E5%BB%BAscript%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5"><span class="toc-number">1.1.</span> <span class="toc-text">1,构建script直接插入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%9E%84%E9%80%A0%E4%BA%8B%E4%BB%B6%EF%BC%8C%E4%B8%8D%E5%90%AB%E6%9C%89-lt-gt-%E5%AD%97%E7%AC%A6%E9%81%BF%E5%85%8D-%E5%8F%AF%E4%BB%A5%E5%9C%A8input%E6%A0%87%E7%AD%BE%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">2,构造事件，不含有&lt;&gt;字符避免,可以在input标签中使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%B8%8D%E5%90%AB%E5%90%8E-lt-gt-%E2%80%9D%E5%AD%97%E7%AC%A6-%E5%8F%AF%E4%BB%A5%E5%9C%A8input%E6%A0%87%E7%AD%BE%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">3,不含后&lt;&gt;”字符,可以在input标签中使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%EF%BC%8C%E6%97%A0%E6%B3%95%E9%80%9A%E8%BF%87-lt-script-gt-%EF%BC%8C%E5%90%AB%E6%9C%89on%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%A0%87%E7%AD%BE%E6%97%B6%EF%BC%8C%E6%9E%84%E9%80%A0-lt-a-href-javascript-alert-%E2%80%98xss%E2%80%99-gt-xss"><span class="toc-number">1.4.</span> <span class="toc-text">4，无法通过&lt;script&gt;，含有on字符串的标签时，构造&lt;a href&#x3D;javascript:alert(‘xss’) &gt; xss</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%8F%8C%E5%86%99%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.5.</span> <span class="toc-text">5,双写关键字</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -381,6 +371,27 @@
 </aside>
 
 
+
+  
+  
+
+  
+
+  
+  <div id="SOHUCS" sid="xss笔记" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cyvyNjLtj",
+        conf: "6cceeb739e1a59b1784423c8fee65e05"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
           </div>
         </div>
@@ -452,7 +463,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
