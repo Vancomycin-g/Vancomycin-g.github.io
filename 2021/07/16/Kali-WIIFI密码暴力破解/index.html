@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,7 @@
 <meta property="og:url" content="https://vancomycin-g.github.io/2021/07/16/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/index.html">
 <meta property="og:site_name" content="虚无的博客">
 <meta property="og:description" content="一，准备工作1，安装好了kali-linux虚拟机。2，kali注册的用户身份为root,或者会更改为root用户。3，准备一个无线网卡。二，打开虚拟机接入无线网卡1，以root身份运行终端模拟器。2，为了避免网卡接入时出现扫描不到WiFi等其他问题（本人就出现了。。弄了好久才搞定），先把网卡接入到主机上。然后在主机上随便连接上一个WiFi后在连接到虚拟机。如上图点击确定。三，判断网卡是否可以使用">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/43e41fc6f71a9fc098e6eb6c1ae03122.png#align=left&display=inline&height=955&margin=[objectObject]&name=image.png&originHeight=955&originWidth=1013&size=39184&status=done&style=none&width=1013">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/18ef968f6627a483f1b64151723b5e28.png#align=left&display=inline&height=361&margin=[objectObject]&name=image.png&originHeight=361&originWidth=1450&size=72697&status=done&style=none&width=1450">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/ae62de35ee7b4534b544c5a35cee926c.png#align=left&display=inline&height=464&margin=[objectObject]&name=image.png&originHeight=464&originWidth=1450&size=126721&status=done&style=none&width=1450">
@@ -51,9 +53,14 @@
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
+	<div class="mymenucontainer" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: #00000"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -115,14 +122,14 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" ></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="//img/mao.png" class="js-avatar">
+				<img src="/img/mao.png" class="js-avatar show">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">虚无</h1>
@@ -606,15 +613,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">biao</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">biao</a>
               </li>
             
             <div class="clearfix"></div>
@@ -755,5 +762,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
+ <!--鼠标点击烟花爆炸效果与爱心，需要引入jQuery-->
+
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+	<script type="text/javascript" src="/js/love.js"></script>
+
+
 </body>
+
 </html>

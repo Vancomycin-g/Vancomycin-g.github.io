@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,7 @@
 <meta property="og:url" content="https://vancomycin-g.github.io/2021/07/17/%E4%BA%92%E8%81%94%E7%BD%91ssh%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%A7%E8%87%B4%E6%80%9D%E8%B7%AF/index.html">
 <meta property="og:site_name" content="虚无的博客">
 <meta property="og:description" content="问题：能不能把自己的虚拟机放在互联网中，只要手机安装有Termux，或电脑有xshell等工具，只要能连上网络，就能登录自己的虚拟机。我是为了手机不仅仅局限在局域网下能够远程登录。然后一阵摸索就有了下面的文章。 前言若你动手实践能力强，推荐你看下思路然后自己摸索着做。无论你虚拟机开启的是NAT模式还是桥接模式都行 思路：1，虚拟机要开启ssh服务。2，主机能够通过Xshell7等登录到虚拟机，检验">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625043451992-99d52412-5481-4c18-8b92-21246df87d4d.png#align=left&display=inline&height=163&margin=[objectObject]&name=image.png&originHeight=326&originWidth=656&size=22337&status=done&style=none&width=328">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625043468139-d51cf200-c001-4ce4-a6df-6eff96661678.png#align=left&display=inline&height=570&margin=[objectObject]&name=image.png&originHeight=1140&originWidth=1039&size=101621&status=done&style=none&width=519.5">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625067729226-2a80c3ae-d4a7-4465-b340-7cc9073c6b88.png#align=left&display=inline&height=550&name=image.png&originHeight=1099&originWidth=1760&size=195999&status=done&style=none&width=880">
@@ -52,9 +54,14 @@
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
+	<div class="mymenucontainer" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: #00000"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -116,14 +123,14 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" ></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="//img/mao.png" class="js-avatar">
+				<img src="/img/mao.png" class="js-avatar show">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">虚无</h1>
@@ -545,15 +552,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">biao</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">biao</a>
               </li>
             
             <div class="clearfix"></div>
@@ -694,5 +701,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
+ <!--鼠标点击烟花爆炸效果与爱心，需要引入jQuery-->
+
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+	<script type="text/javascript" src="/js/love.js"></script>
+
+
 </body>
+
 </html>
