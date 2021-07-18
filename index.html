@@ -6,17 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>虚无的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="虚无的博客">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="虚无的博客">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="虚无">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/mao.png">
@@ -49,11 +47,13 @@
 		  <h1 class="header-author"><a href="/">虚无</a></h1>
 		</hgroup>
 		
+		<p class="header-subtitle">世界上所有不利因素都是当事者的能力不足。</p>
+		
 
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a target="_blank" rel="noopener" href="https://vancomycin-g.github.io/">主页🎉</a></li>
+				<li><a target="_blank" rel="noopener" href="https://vancomycin-g.github.io/archives/index.html">主页🎉</a></li>
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 	        
@@ -116,6 +116,8 @@
 			  <h1 class="header-author js-header-author">虚无</h1>
 			</hgroup>
 			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>世界上所有不利因素都是当事者的能力不足。<i class="icon icon-quo-right"></i></p>
+			
 			
 			
 				
@@ -148,7 +150,7 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 20%"><a target="_blank" rel="noopener" href="https://vancomycin-g.github.io/">主页🎉</a></li>
+					<li style="width: 20%"><a target="_blank" rel="noopener" href="https://vancomycin-g.github.io/archives/index.html">主页🎉</a></li>
 		        
 					<li style="width: 20%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
@@ -201,9 +203,16 @@
 <h1 id="检验："><a href="#检验：" class="headerlink" title="检验："></a>检验：</h1><p>1.同局域网下：用xshell登录：<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625068776195-c2047eb2-30b7-40db-8dee-ecf01516be8c.png#align=left&display=inline&height=176&margin=%5Bobject%20Object%5D&name=image.png&originHeight=351&originWidth=815&size=31225&status=done&style=none&width=407.5" alt="image.png"><br>2。用手机Linux，用流量登录(不在一个局域网下）<br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625069087017-43d0c082-6365-4833-b94d-616ad8cbc612.png#align=left&display=inline&height=481&margin=%5Bobject%20Object%5D&name=image.png&originHeight=962&originWidth=432&size=460253&status=done&style=none&width=216" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/2897198/1625069181562-2e5946e6-b252-4d3e-abd1-deead7d356cb.png#align=left&display=inline&height=149&margin=%5Bobject%20Object%5D&name=image.png&originHeight=297&originWidth=606&size=235813&status=done&style=none&width=303" alt="image.png"><br>ok只要能联上网能使用ssh命令就可以登上自己的虚拟机了。美滋滋！！！</p>
 
       
+ <!-- 添加版权声明 -->
+    
+
+  <div class="declare" hidden="hidden"></div>
+
+      <!-- 添加版权声明 -->
 
       
     </div>
+	
     <div class="article-info article-info-index">
       
         <div class="article-pop-out tagcloud">
@@ -255,7 +264,6 @@
 
 
 
-
   
     <article id="post-Kali-WIIFI密码暴力破解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -282,9 +290,16 @@
 <p>图中彩线画的是接入WiFi的设备，当出现蓝线圈的<strong>WPA handshake,</strong> 时就代表抓包成功。<br>4.但，这是被动等待有新设备接入WiFi，这可能需要很长时间才能抓包成功，所以我们要主动出击。<br>再开一个终端，输入airepaly-ng -0 攻击次数 -a bssid -c 连接到WiFi的设备mac地址 网卡名<br>如<br><img src="https://img-blog.csdnimg.cn/img_convert/2c95e27604ca8f103ca970ffe1ebe7a1.png#align=left&display=inline&height=324&margin=[objectObject]&name=image.png&originHeight=324&originWidth=1777&size=227924&status=done&style=none&width=1777" alt="image.png"><br>(0 WiFi设备无限次数,-0 300则攻击300次。攻击原理是：先让设备掉线，设备会再自动连接，并发这个自动连接过程会进行三次握手，会发送tcp包（里面包含加密的密码数据），我方伪装成WiFi热点去窃取该数据包。我方窃取后即可用字典穷举法暴力破解加密的WiFi密码,<br>数据包里面的密码是哈希加密的，哈希加密只能正向)<br><strong>出现WPA handshake时，表示抓包成功</strong><br><strong>两个终端都按Ctrl+c停止，不然那边会一直断网</strong><br><strong>五，暴力破解。</strong><br>1，键入  <strong>aircrack-ng -a2 -b  bssid <strong>-w</strong> 字典路径 握手包路径 回车后开始爆破</strong><br><strong>如：</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/bff302571bd1fe9b171c9fa667c9bb7c.png#align=left&display=inline&height=70&margin=[objectObject]&name=image.png&originHeight=70&originWidth=2113&size=56138&status=done&style=none&width=2113" alt="image.png"><br><strong>然后就等待，看运气了</strong><br><strong>特别说明：暴力破解并不简单，需要足够强大的字典和时间，可以通过字典生成工具生成自己的字典，字典越强大越容易破解。</strong> 破解速度还与电脑算力有关。<br><img src="https://img-blog.csdnimg.cn/img_convert/a0760e9ceaa9cdbe1cc49f73b771e742.png#align=left&display=inline&height=766&margin=[objectObject]&name=image.png&originHeight=766&originWidth=1405&size=80646&status=done&style=none&width=1405" alt="image.png"><br><strong>这就没找到。。。。</strong><br>2，下面是另一种破解方式。<br> cowpatty -f 字典路径 -r 包的路径 -s wifi名字<br><img src="https://img-blog.csdnimg.cn/img_convert/59734fcf11b858819f1fbdd251404031.png#align=left&display=inline&height=159&margin=[objectObject]&name=image.png&originHeight=159&originWidth=1887&size=28970&status=done&style=none&width=1887" alt="image.png"><br>本文参考了<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44545251/article/details/100279827?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161502192116780271544099%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=161502192116780271544099&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-100279827.first_rank_v2_pc_rank_v29_10&utm_term=kaliwifi%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4">凡尘-追梦者</a>的博客，感谢！</p>
 
       
+ <!-- 添加版权声明 -->
+    
+
+  <div class="declare" hidden="hidden"></div>
+
+      <!-- 添加版权声明 -->
 
       
     </div>
+	
     <div class="article-info article-info-index">
       
         <div class="article-pop-out tagcloud">
@@ -336,7 +351,6 @@
 
 
 
-
   
     <article id="post-用互联网通过ssh远程登录Linux虚拟机" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -352,9 +366,16 @@
 <h1 id="检验："><a href="#检验：" class="headerlink" title="检验："></a>检验：</h1><p>1.同局域网下：用xshell登录：<br><img src="https://img-blog.csdnimg.cn/img_convert/cfbea3c3f7c910967d9e9007983c4bda.png#align=left&display=inline&height=176&margin=[objectObject]&name=image.png&originHeight=351&originWidth=815&size=31225&status=done&style=none&width=407.5" alt="image.png"><br>2。用手机Linux，用流量登录(不在一个局域网下）<br><img src="https://img-blog.csdnimg.cn/img_convert/6450b586417b92548be5ecdd0096214e.png#align=left&display=inline&height=481&margin=[objectObject]&name=image.png&originHeight=962&originWidth=432&size=460253&status=done&style=none&width=216" alt="image.png"><br><img src="https://img-blog.csdnimg.cn/img_convert/11e90a85d315d05a8d3e8c87cc4c3040.png#align=left&display=inline&height=149&margin=[objectObject]&name=image.png&originHeight=297&originWidth=606&size=235813&status=done&style=none&width=303" alt="image.png"><br>ok只要能联上网能使用ssh命令就可以登上自己的虚拟机了。美滋滋！！！</p>
 
       
+ <!-- 添加版权声明 -->
+    
+
+  <div class="declare" hidden="hidden"></div>
+
+      <!-- 添加版权声明 -->
 
       
     </div>
+	
     <div class="article-info article-info-index">
       
       
@@ -387,7 +408,6 @@
         
     </div>
 </aside>
-
 
 
 
@@ -427,9 +447,16 @@
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
+ <!-- 添加版权声明 -->
+    
+
+  <div class="declare" hidden="hidden"></div>
+
+      <!-- 添加版权声明 -->
 
       
     </div>
+	
     <div class="article-info article-info-index">
       
       
@@ -465,7 +492,6 @@
 
 
 
-
   
   
 
@@ -487,7 +513,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 John Doe
+    		&copy; 2021 虚无
     	</div>
       	<div class="footer-right">
       		<!--<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten --!>
