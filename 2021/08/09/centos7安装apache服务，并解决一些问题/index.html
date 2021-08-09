@@ -8,31 +8,37 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://vancomycin-g.github.io">
-  <title>Kali-WIIFI密码暴力破解 | 虚无的博客</title>
+  <title>虚无的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一，准备工作1，安装好了kali-linux虚拟机。2，kali注册的用户身份为root,或者会更改为root用户。3，准备一个无线网卡。">
+  <meta name="description" content="title: centos7安装apache服务，并解决一些问题type: categoriestop: 6categories: Linuxdate: 2021-07-16 16:36:40tages:  ​    -虚拟机 ​    -Linux # 一、卸载apache已安装的软件包 ### 1、命令  rpm -qa |grep httpd ，查看系统中已安装的所有apache软件包列表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kali-WIIFI密码暴力破解">
-<meta property="og:url" content="https://vancomycin-g.github.io/2021/07/16/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/index.html">
+<meta property="og:title" content="虚无的博客">
+<meta property="og:url" content="https://vancomycin-g.github.io/2021/08/09/centos7%E5%AE%89%E8%A3%85apache%E6%9C%8D%E5%8A%A1%EF%BC%8C%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="虚无的博客">
-<meta property="og:description" content="一，准备工作1，安装好了kali-linux虚拟机。2，kali注册的用户身份为root,或者会更改为root用户。3，准备一个无线网卡。">
+<meta property="og:description" content="title: centos7安装apache服务，并解决一些问题type: categoriestop: 6categories: Linuxdate: 2021-07-16 16:36:40tages:  ​    -虚拟机 ​    -Linux # 一、卸载apache已安装的软件包 ### 1、命令  rpm -qa |grep httpd ，查看系统中已安装的所有apache软件包列表">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/43e41fc6f71a9fc098e6eb6c1ae03122.png#align=left&display=inline&height=955&margin=[objectObject]&name=image.png&originHeight=955&originWidth=1013&size=39184&status=done&style=none&width=1013">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/18ef968f6627a483f1b64151723b5e28.png#align=left&display=inline&height=361&margin=[objectObject]&name=image.png&originHeight=361&originWidth=1450&size=72697&status=done&style=none&width=1450">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/ae62de35ee7b4534b544c5a35cee926c.png#align=left&display=inline&height=464&margin=[objectObject]&name=image.png&originHeight=464&originWidth=1450&size=126721&status=done&style=none&width=1450">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/a0c221064836a51546936c64f9820a7c.png#align=left&display=inline&height=335&margin=[objectObject]&name=image.png&originHeight=335&originWidth=1513&size=147580&status=done&style=none&width=1513">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/d030a452882b7ad1a2ae428e1a776604.png#align=left&display=inline&height=350&margin=[objectObject]&name=image.png&originHeight=350&originWidth=1495&size=155615&status=done&style=none&width=1495">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/f5b38dc40e4f527fd33a12a74bf25b17.png#align=left&display=inline&height=547&margin=[objectObject]&name=image.png&originHeight=547&originWidth=1985&size=294025&status=done&style=none&width=1985">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/2c95e27604ca8f103ca970ffe1ebe7a1.png#align=left&display=inline&height=324&margin=[objectObject]&name=image.png&originHeight=324&originWidth=1777&size=227924&status=done&style=none&width=1777">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/bff302571bd1fe9b171c9fa667c9bb7c.png#align=left&display=inline&height=70&margin=[objectObject]&name=image.png&originHeight=70&originWidth=2113&size=56138&status=done&style=none&width=2113">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/a0760e9ceaa9cdbe1cc49f73b771e742.png#align=left&display=inline&height=766&margin=[objectObject]&name=image.png&originHeight=766&originWidth=1405&size=80646&status=done&style=none&width=1405">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/59734fcf11b858819f1fbdd251404031.png#align=left&display=inline&height=159&margin=[objectObject]&name=image.png&originHeight=159&originWidth=1887&size=28970&status=done&style=none&width=1887">
-<meta property="article:published_time" content="2021-07-16T08:36:40.000Z">
-<meta property="article:modified_time" content="2021-07-18T16:09:52.944Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/cd0cc8f977f652a04806670e183142a6.png#align=left&display=inline&height=59&margin=[objectObject]&name=image.png&originHeight=117&originWidth=723&size=13378&status=done&style=none&width=361.5">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/7b7fee48210fdab648725b5cb9c7a18c.png#align=left&display=inline&height=96&margin=[objectObject]&name=image.png&originHeight=191&originWidth=789&size=23573&status=done&style=none&width=394.5">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/8f3e6d97600e700e395d97cc552c2998.png#align=left&display=inline&height=142&margin=[objectObject]&name=image.png&originHeight=284&originWidth=1258&size=33254&status=done&style=none&width=629">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/a26c801fd688a6a84ef653a419653573.png#align=left&display=inline&height=180&margin=[objectObject]&name=image.png&originHeight=359&originWidth=845&size=31401&status=done&style=none&width=422.5">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/7e8f93e0d6dbfd07cedb86b666b313e2.png#align=left&display=inline&height=335&margin=[objectObject]&name=image.png&originHeight=669&originWidth=1168&size=66860&status=done&style=none&width=584">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/bc442317f1733b71e5a1eba538b1c6b2.png#align=left&display=inline&height=140&margin=[objectObject]&name=image.png&originHeight=279&originWidth=823&size=21949&status=done&style=none&width=411.5">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/bc53c0c34a04172ee8c06aefceca68d5.png#align=left&display=inline&height=32&margin=[objectObject]&name=image.png&originHeight=64&originWidth=658&size=6247&status=done&style=none&width=329">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/c1b6bd464280025d58693a3c624b80db.png#align=left&display=inline&height=140&margin=[objectObject]&name=image.png&originHeight=280&originWidth=1178&size=38984&status=done&style=none&width=589">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/65c2974d7ae944f7d5f741ff978d6133.png#align=left&display=inline&height=48&margin=[objectObject]&name=image.png&originHeight=95&originWidth=502&size=7345&status=done&style=none&width=251">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/7c94456b90b0079383d408c868ba004f.png#align=left&display=inline&height=128&margin=[objectObject]&name=image.png&originHeight=256&originWidth=1260&size=44861&status=done&style=none&width=630">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/b7611a67263a36aee4d781fc19ca1bc1.png#align=left&display=inline&height=455&margin=[objectObject]&name=image.png&originHeight=910&originWidth=1046&size=103578&status=done&style=none&width=523">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/688b2bccc738edcb46bed51cff8fdc5c.png#align=left&display=inline&height=123&margin=[objectObject]&name=image.png&originHeight=246&originWidth=1172&size=34998&status=done&style=none&width=586">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/e528e78e5efaa355000f0c3267791b67.png#align=left&display=inline&height=108&margin=[objectObject]&name=image.png&originHeight=216&originWidth=1272&size=23932&status=done&style=none&width=636">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/99a25523364010dedfbf15badda043e7.png#align=left&display=inline&height=139&margin=[objectObject]&name=image.png&originHeight=277&originWidth=1311&size=43250&status=done&style=none&width=655.5">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/716ffe3e155e8c3e279c76460b942a70.png#align=left&display=inline&height=179&margin=[objectObject]&name=image.png&originHeight=358&originWidth=1019&size=50239&status=done&style=none&width=509.5">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/dede34752fd4ee3367a3594f2cbab91f.png#align=left&display=inline&height=70&margin=[objectObject]&name=image.png&originHeight=139&originWidth=1186&size=15741&status=done&style=none&width=593">
+<meta property="article:published_time" content="2021-08-09T13:00:55.335Z">
+<meta property="article:modified_time" content="2021-08-09T13:02:49.277Z">
 <meta property="article:author" content="虚无">
-<meta property="article:tag" content="kali">
+<meta property="article:tag" content="渗透与测试,网络安全,web安全,Linux,mysql">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/43e41fc6f71a9fc098e6eb6c1ae03122.png#align=left&display=inline&height=955&margin=[objectObject]&name=image.png&originHeight=955&originWidth=1013&size=39184&status=done&style=none&width=1013">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/cd0cc8f977f652a04806670e183142a6.png#align=left&display=inline&height=59&margin=[objectObject]&name=image.png&originHeight=117&originWidth=723&size=13378&status=done&style=none&width=361.5">
   
   
     <link rel="icon" href="/img/mao.png">
@@ -187,106 +193,263 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<i class="fa fa-thumb-tack"></i>
-<font color=7D26CD>置顶</font>
-<span class="post-meta-divider">|</span>
-
-<article id="post-Kali-WIIFI密码暴力破解" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-centos7安装apache服务，并解决一些问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Kali-WIIFI密码暴力破解
-    </h1>
-  
-
-        
-        
-<a href="/2021/07/16/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2021-07-16T08:36:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-16</time>
-</a>
-
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-               ⋉(●本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次●)⋊
-        </span>
-
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>一，准备工作</strong><br>1，安装好了kali-linux虚拟机。<br>2，kali注册的用户身份为root,或者会更改为root用户。<br>3，准备一个无线网卡。</p>
-<span id="more"></span>
+        <p>title: centos7安装apache服务，并解决一些问题<br>type: categories<br>top: 6<br>categories: Linux<br>date: 2021-07-16 16:36:40<br>tages: </p>
+<p>​    -虚拟机</p>
+<p>​    -Linux</p>
+<p># 一、卸载apache已安装的软件包</p>
+<p>### 1、命令  rpm -qa |grep httpd ，查看系统中已安装的所有apache软件包列表</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/cd0cc8f977f652a04806670e183142a6.png#align=left&display=inline&height=59&margin=[objectObject]&name=image.png&originHeight=117&originWidth=723&size=13378&status=done&style=none&width=361.5" alt="image.png"></p>
+<p>2、卸载软件包，注意**<em>*<strong><strong>从下往上一个一个地卸载</strong></strong></em>***，如果用户的权限不能进行卸载此软件，可以在命令前面加sudo。</p>
+<p>```bash</p>
+<p>rpm -e –nodeps httpd-tools</p>
+<p>rpm -e –nodeps httpd</p>
+<p>```</p>
+<p>–nodeps是指卸载软件时，忽略依赖关系。卸载时不一定要写软件包的全称，只要写软件包名就可以了，如只要写httpd或httpd-tools。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/7b7fee48210fdab648725b5cb9c7a18c.png#align=left&display=inline&height=96&margin=[objectObject]&name=image.png&originHeight=191&originWidth=789&size=23573&status=done&style=none&width=394.5" alt="image.png"></p>
+<p>卸载后再输入<code> rpm -qa |grep httpd</code></p>
+<p>如上图既卸载成功。</p>
+<p># 二，安装apache</p>
+<p>## 1，下载</p>
+<p>```bash</p>
+<p>yum install httpd</p>
+<p>```</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/8f3e6d97600e700e395d97cc552c2998.png#align=left&display=inline&height=142&margin=[objectObject]&name=image.png&originHeight=284&originWidth=1258&size=33254&status=done&style=none&width=629" alt="image.png"></p>
+<p>## 2，检查是否安装成功<code>rpm -qa |grep httpd</code></p>
+<p> <img src="https://img-blog.csdnimg.cn/img_convert/a26c801fd688a6a84ef653a419653573.png#align=left&display=inline&height=180&margin=[objectObject]&name=image.png&originHeight=359&originWidth=845&size=31401&status=done&style=none&width=422.5" alt="image.png"></p>
+<p>若下载时非常慢或下载不成功则考虑换源，参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51478862/article/details/117960688?spm=1001.2014.3001.5501">文章</a></p>
+<p>## 3，配置文件</p>
+<p>执行<strong><em>*<strong><strong>vi /etc/httpd/conf/httpd.conf</strong></strong></em>*</strong> </p>
+<p>按ESC键输入<code>:/ServerName www.example.com:80</code>回车</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/7e8f93e0d6dbfd07cedb86b666b313e2.png#align=left&display=inline&height=335&margin=[objectObject]&name=image.png&originHeight=669&originWidth=1168&size=66860&status=done&style=none&width=584" alt="image.png"></p>
+<p>输入”i”</p>
+<p>把<code>ServerName www.example.com:80</code>改为:</p>
+<p><em><strong>*</strong></em><em><code>****ServerName localhost:80****</code>****<em>*</em></em></p>
+<p>**<img src="https://img-blog.csdnimg.cn/img_convert/bc442317f1733b71e5a1eba538b1c6b2.png#align=left&display=inline&height=140&margin=[objectObject]&name=image.png&originHeight=279&originWidth=823&size=21949&status=done&style=none&width=411.5" alt="image.png"></p>
+<p>然后按esc 输入<code>:wq</code>回车</p>
+<p># 三，服务命令</p>
+<p>### 1，httpd服务启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start httpd</span><br></pre></td></tr></table></figure>
 
-<p><strong>二，打开虚拟机接入无线网卡</strong><br>1，以root身份运行终端模拟器。<br>2，为了避免网卡接入时出现扫描不到WiFi等其他问题（本人就出现了。。弄了好久才搞定），先把网卡接入到主机上。<br><img src="https://img-blog.csdnimg.cn/img_convert/43e41fc6f71a9fc098e6eb6c1ae03122.png#align=left&display=inline&height=955&margin=[objectObject]&name=image.png&originHeight=955&originWidth=1013&size=39184&status=done&style=none&width=1013" alt="image.png"><br>然后在主机上随便连接上一个WiFi后在连接到虚拟机。<br><img src="https://img-blog.csdnimg.cn/img_convert/18ef968f6627a483f1b64151723b5e28.png#align=left&display=inline&height=361&margin=[objectObject]&name=image.png&originHeight=361&originWidth=1450&size=72697&status=done&style=none&width=1450" alt="image.png"><br>如上图点击确定。<br><strong>三，判断网卡是否可以使用</strong><br>1，在模拟终端中输入iwconfig 用来查看网卡是否支持监听模式。<br><img src="https://img-blog.csdnimg.cn/img_convert/ae62de35ee7b4534b544c5a35cee926c.png#align=left&display=inline&height=464&margin=[objectObject]&name=image.png&originHeight=464&originWidth=1450&size=126721&status=done&style=none&width=1450" alt="image.png"><br>图中的若出现wlan0 应该就可以使用。此时mode:manage.<br>2，输入airmon-ng start wlan0<br><img src="https://img-blog.csdnimg.cn/img_convert/a0c221064836a51546936c64f9820a7c.png#align=left&display=inline&height=335&margin=[objectObject]&name=image.png&originHeight=335&originWidth=1513&size=147580&status=done&style=none&width=1513" alt="image.png"><br>3，然后再次输入iwconfig重新查看网卡状态<br><img src="https://img-blog.csdnimg.cn/img_convert/d030a452882b7ad1a2ae428e1a776604.png#align=left&display=inline&height=350&margin=[objectObject]&name=image.png&originHeight=350&originWidth=1495&size=155615&status=done&style=none&width=1495" alt="image.png"><br>此时，wlan0 中的mode变为了monitor就是监视功能开启了。<br>有的网卡名wlan0变为wlan0mon;要注意后面会用网卡名。<br>此时网卡就可以使用了。<br><strong>四，扫描wifi并监听，抓包。</strong><br>1，输入：airodump 网卡名<br><strong>开始扫描WiFi，按ctrl+c结束任务</strong></p>
-<p>BSSID为wifi的MAC地址，PWR为信号强弱程度，数值越小信号越强；#DATA为数据量，越大WiFi接入的设备就越多，CH为信道频率（频道），ESSID为wifi的名称，中文可能会有乱码。<br>2，注意选择WiFi时要以data数据量为第一参考。然后再参考信号强度。<br>选好后按ctrl+c停止扫描。<br>3，输入<br><strong>airodump-ng –bssid BSSID -c 信道频率（CH） -w 储存抓包存储的路径 wlan0mon</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/f5b38dc40e4f527fd33a12a74bf25b17.png#align=left&display=inline&height=547&margin=[objectObject]&name=image.png&originHeight=547&originWidth=1985&size=294025&status=done&style=none&width=1985" alt="image.png"></p>
-<p>图中彩线画的是接入WiFi的设备，当出现蓝线圈的<strong>WPA handshake,</strong> 时就代表抓包成功。<br>4.但，这是被动等待有新设备接入WiFi，这可能需要很长时间才能抓包成功，所以我们要主动出击。<br>再开一个终端，输入airepaly-ng -0 攻击次数 -a bssid -c 连接到WiFi的设备mac地址 网卡名<br>如<br><img src="https://img-blog.csdnimg.cn/img_convert/2c95e27604ca8f103ca970ffe1ebe7a1.png#align=left&display=inline&height=324&margin=[objectObject]&name=image.png&originHeight=324&originWidth=1777&size=227924&status=done&style=none&width=1777" alt="image.png"><br>(0 WiFi设备无限次数,-0 300则攻击300次。攻击原理是：先让设备掉线，设备会再自动连接，并发这个自动连接过程会进行三次握手，会发送tcp包（里面包含加密的密码数据），我方伪装成WiFi热点去窃取该数据包。我方窃取后即可用字典穷举法暴力破解加密的WiFi密码,<br>数据包里面的密码是哈希加密的，哈希加密只能正向)<br><strong>出现WPA handshake时，表示抓包成功</strong><br><strong>两个终端都按Ctrl+c停止，不然那边会一直断网</strong><br><strong>五，暴力破解。</strong><br>1，键入  <strong>aircrack-ng -a2 -b  bssid <strong>-w</strong> 字典路径 握手包路径 回车后开始爆破</strong><br><strong>如：</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/bff302571bd1fe9b171c9fa667c9bb7c.png#align=left&display=inline&height=70&margin=[objectObject]&name=image.png&originHeight=70&originWidth=2113&size=56138&status=done&style=none&width=2113" alt="image.png"><br><strong>然后就等待，看运气了</strong><br><strong>特别说明：暴力破解并不简单，需要足够强大的字典和时间，可以通过字典生成工具生成自己的字典，字典越强大越容易破解。</strong> 破解速度还与电脑算力有关。<br><img src="https://img-blog.csdnimg.cn/img_convert/a0760e9ceaa9cdbe1cc49f73b771e742.png#align=left&display=inline&height=766&margin=[objectObject]&name=image.png&originHeight=766&originWidth=1405&size=80646&status=done&style=none&width=1405" alt="image.png"><br><strong>这就没找到。。。。</strong><br>2，下面是另一种破解方式。<br> cowpatty -f 字典路径 -r 包的路径 -s wifi名字<br><img src="https://img-blog.csdnimg.cn/img_convert/59734fcf11b858819f1fbdd251404031.png#align=left&display=inline&height=159&margin=[objectObject]&name=image.png&originHeight=159&originWidth=1887&size=28970&status=done&style=none&width=1887" alt="image.png"><br>本文参考了<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44545251/article/details/100279827?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161502192116780271544099%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=161502192116780271544099&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-100279827.first_rank_v2_pc_rank_v29_10&utm_term=kaliwifi%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4">凡尘-追梦者</a>的博客，感谢！</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/bc53c0c34a04172ee8c06aefceca68d5.png#align=left&display=inline&height=32&margin=[objectObject]&name=image.png&originHeight=64&originWidth=658&size=6247&status=done&style=none&width=329" alt="image.png"></p>
+<p>之前看了好多博客用的启动命令是</p>
+<p><em><strong>*</strong></em><em><code>****service httpd start****</code>******<strong>因为</strong></em>*<strong><strong>是centos6的命令 ， 所以centos7无法使用 。</strong></strong><em>*</em>*</p>
+<p>### 2，设置为将httpd服务设为开机自动启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable httpd</span><br></pre></td></tr></table></figure>
+
+<p>### 3，然后查看httpd服务的运行状态</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status httpd</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/img_convert/c1b6bd464280025d58693a3c624b80db.png#align=left&display=inline&height=140&margin=[objectObject]&name=image.png&originHeight=280&originWidth=1178&size=38984&status=done&style=none&width=589" alt="image.png"></p>
+<p>Loaded行中的enabled表示该服务是开机自动启动的，disable表示该服务不是开机自动启动的</p>
+<p>### 4,若不想使用开机自动启动则执行：</p>
+<p>`systemctl disable httpd</p>
+<p>`</p>
+<p>### 5，其他命令</p>
+<p>```bash</p>
+<p>检查httpd服务是否处于活动状态</p>
+<p>systemctl is-active httpd.service</p>
+<p>停止httpd服务</p>
+<p>systemctl stop httpd.service</p>
+<p>重新启动httpd服务</p>
+<p>systemctl restart httpd.service</p>
+<p>```</p>
+<p># 四、 通过yum源安装apache时常用文件存放位置</p>
+<p>（1）配置文件默认在 /etc/httpd 目录下</p>
+<p>/etc/httpd/conf.d：自己设定apache的参数信息，里面的文件应以xxx.conf结尾的文件，当apache启动的时候，这个文件会自动被读入到主要配置文件当中；</p>
+<p>/etc/httpd/modules文件夹：存放httpd的模块</p>
+<p>/etc/httpd/logs文件夹：里面有两个文件记录apache的所有的日志</p>
+<p>access_log：默认访问Apache日志文件</p>
+<p>error_log：错误日志文件</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/65c2974d7ae944f7d5f741ff978d6133.png#align=left&display=inline&height=48&margin=[objectObject]&name=image.png&originHeight=95&originWidth=502&size=7345&status=done&style=none&width=251" alt="image.png"></p>
+<p>进入 cd conf 目录，/etc/httpd/conf/httpd.conf：配置Apache主要权限和功能的文件，是最重要的配置文件</p>
+<p>（2）etc/init.d/httpd ：启动文件</p>
+<p>（3）存放网页的文件默认在 <em><strong>*</strong></em><em>/var/www 目录下</em>**<strong>*</strong></p>
+<p><em><strong>*</strong></em><em>/var/www/html：网页源文件</em>*******文件存放的目录。</p>
+<p><strong>***<em><strong>注意:</strong></em>***</strong></p>
+<p>平常网页源文件都是直接保存在www目录下而这是放在www/html目录下</p>
+<p>是因为/etc/httpd/conf/httpd.conf中默认的目录 DocumentRoot=/var/www/html</p>
+<p><em><strong>*</strong></em><em>/var/www/cgi-bin:****<em>*</em></em> 存放可执行的CGI（网页程序）程序</p>
+<p><strong><em>*<strong><strong>下面了解既可：</strong></strong></em>*</strong></p>
+<p>（4）/usr/sbin/apachectl：这个apachectl是文件，是apache的主要执行文件，它可以主动检测系统上的一些设置值，可以使启动apache时更简单，相当于apache 的一些管理工具</p>
+<p>（5）/usr/bin/htpasswd：登陆网页的时候，会提示输入账号和密码，而apache本身就提供一个最基本的密码保护方式，该密码的产生就是通过这个指令实现的。</p>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_24394093/article/details/90550134">https://blog.csdn.net/qq_24394093/article/details/90550134</a></p>
+<p># 五，写个网页进行测试</p>
+<p>## 1，创建网页</p>
+<p>切换到/var/www/html目录下</p>
+<p>**vi test.html//创建文件并打开</p>
+<p>在文件中输入以下内容保存并退出：**</p>
+<p>```bash</p>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<p>    <meta charset="UTF-8"></p>
+<p>    <meta name="viewport" content="width=device-width, initial-scale=1.0"></p>
+  <title>恋爱官网。</title>
+
+</head>
+
+<body>
+
+  <h4>青春不常在，抓紧谈恋爱！</h4><br>
+
+  <form action="#" method="get">
+
+<p>    <table width="500"></p>
+<p>​    <tbody></p>
+<p>​      <!-- 第一行 --></p>
+<p>​      <tr></p>
+<p>​        <td>性别:</td></p>
+<p>​        <td></p>
+<p>​          <input type="radio" name="sex" id="man"> <label for="man">男</label> </p>
+<p>​          <input type="radio" name="sex" id="woman"> <label for="woman">女</label></p>
+<p>​        </td></p>
+<p>​      </tr><br></p>
+<p>​      <!-- 第二行 --></p>
+<p>​      <tr></p>
+<p>​        <td>生日:</td></p>
+<p>​        <td></p>
+<p>​          <!-- 年 --></p>
+<p>​          <select ></p>
+<p>​            <option>–请选择年–</option></p>
+<p>​            <option>1995</option></p>
+<p>​            <option>1996</option></p>
+<p>​            <option>1997</option></p>
+<p>​            <option>1998</option></p>
+<p>​            <option>1999</option></p>
+<p>​            <option>2000</option></p>
+<p>​            <option>2001</option></p>
+<p>​            <option>2002</option></p>
+<p>​          </select></p>
+<p>​          <!-- 月 --></p>
+<p>​          <select></p>
+<p>​            <option>–请选择月–</option></p>
+<p>​            <option>1</option><option>2</option><option>3</option></p>
+<p>​            <option>4</option><option>5</option><option>6</option></p>
+<p>​            <option>7</option><option>8</option><option>9</option></p>
+<p>​            <option>10</option><option>11</option><option>12</option></p>
+<p>​          </select></p>
+<p>​          <!-- 日 --></p>
+<p>​          <select></p>
+<p>​            <option>–请选择日–</option></p>
+<p>​            <option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option></p>
+<p>​            <option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></p>
+<p>​            <option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option></p>
+<p>​            <option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option></p>
+<p>​            <option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option></p>
+<p>​          <option>31</option></p>
+<p>​          </select></p>
+<p>​        </td></p>
+<p>​        </p>
+<p>​      </tr><br></p>
+<p>​      <!-- 第三行 --></p>
+<p>​      <tr></p>
+<p>​        <td>所在地区：</td></p>
+<p>​        <td><input type="text" maxlength="50" value="请输入您现在的地址："></td></p>
+<p>​      </tr></p>
+<p>​      <!-- 第四行 --></p>
+<p>​      <tr></p>
+<p>​        <td>婚姻状况：</td></p>
+<p>​        <td></p>
+<p>​          <input type="radio" name="stat" id="wei"><label for="wei" >未婚</label></p>
+<p>​          <input type="radio" name="stat" id="li"><label for="li" >离婚</label></p>
+<p>​          <input type="radio" name="stat" id="yi"><label for="yi" >已婚</label></p>
+<p>​        </td></p>
+<p>​      </tr></p>
+<p>​      <tr></p>
+<p>​        <td>喜欢的类型：</td></p>
+<p>​        <td></p>
+<p>​          <input type="checkbox" name="like" id="chengshu" ><label for="chengshu">成熟</label> <input type="checkbox" name="like" id="xiaoxianrou"><label for="xiaoxianrou">小鲜肉</label></p>
+<p>​          <input type="checkbox" name="like" id="keai"> <label for="keai">可爱</label><input type="checkbox" name="like" id="wumei"> <lable for="wumei">妩媚</lable></p>
+<p>​          <input type="checkbox" name="like" id="all"> <lable for="all">全部</lable></p>
+<p>​        </td></p>
+<p>​      </tr></p>
+<p>​      <!-- 自我介绍 --></p>
+<p>​      <tr></p>
+<p>​        <td>自我介绍：</td></p>
+<p>​        <td><textarea>自我介绍一下。</textarea> </td></p>
+<p>​      </tr></p>
+<p>​      <tr><td colspan="2" align="center"><input type="submit" value="免费注册"></td></tr></p>
+<p>​      </p>
+<p>​    </tbody></p>
+  </table>
+
+</form>
+
+</body>
+
+</html>
+
+<p>```</p>
+<p>## 2，查看ip地址</p>
+<p>输入ifconfig</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/7c94456b90b0079383d408c868ba004f.png#align=left&display=inline&height=128&margin=[objectObject]&name=image.png&originHeight=256&originWidth=1260&size=44861&status=done&style=none&width=630" alt="image.png"></p>
+<p>默认端口为80，</p>
+<p>在浏览器中输入<code>192.168.133.176:80/test.html</code></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/b7611a67263a36aee4d781fc19ca1bc1.png#align=left&display=inline&height=455&margin=[objectObject]&name=image.png&originHeight=910&originWidth=1046&size=103578&status=done&style=none&width=523" alt="image.png"></p>
+<p># 六,网页进不去的解决办法</p>
+<p><strong><em>*<strong><strong>但有些人可能进不去网页，我刚开始配置时就是无法打开网页。</strong></strong></em>*</strong></p>
+<p><strong><em>*<strong><strong>下面进行排查。</strong></strong></em>*</strong></p>
+<p>## 1，是否开启apache服务</p>
+<p>为了能够远程访问服务器的网页，我们首先需要确保apache的服务httpd已经运行中，我们使用命令查看对应服务的状态：</p>
+<p>systemctl status httpd</p>
+<p>如果如图所示显示正在运行，则表示服务已经开启，否则我们需要使用命令使httpd服务:<code>service start httpd</code></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/688b2bccc738edcb46bed51cff8fdc5c.png#align=left&display=inline&height=123&margin=[objectObject]&name=image.png&originHeight=246&originWidth=1172&size=34998&status=done&style=none&width=586" alt="image.png"></p>
+<p>## 2，80端口是否被占用</p>
+<p>随后我们需要再判断下80端口是否被其他程序所占，使用如下命令查看:</p>
+<p>netstat -lnp | grep 80</p>
+<p>如果如图所示80端口是被httpd使用的则是OK，否则我们要进行操作改正，这里一般也不会出错。这里就不详述了</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/e528e78e5efaa355000f0c3267791b67.png#align=left&display=inline&height=108&margin=[objectObject]&name=image.png&originHeight=216&originWidth=1272&size=23932&status=done&style=none&width=636" alt="image.png"></p>
+<p>## 3，防火墙入站规则</p>
+<p>（1）随后我们可以先看下系统防火墙是否开启，当其他服务都正常的时候，无法访问网页很大概率是没有正确配置防火墙所导致的，因此我们先使用如下命令判断下防火墙的状态，centos7 默认防火墙是firewalld </p>
+<p> systemctl status firewalld.service</p>
+<p>如果如下图所示，<img src="https://img-blog.csdnimg.cn/img_convert/99a25523364010dedfbf15badda043e7.png#align=left&display=inline&height=139&margin=[objectObject]&name=image.png&originHeight=277&originWidth=1311&size=43250&status=done&style=none&width=655.5" alt="image.png">则说明系统的防火墙正在运行，我们可以先尝试关闭防火墙，然后再访问网站。若能直接访问网站那么就确认是防火墙的问题。</p>
+<p>（2）关闭防火墙：<code>systemctl stop firewalld.service</code></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/716ffe3e155e8c3e279c76460b942a70.png#align=left&display=inline&height=179&margin=[objectObject]&name=image.png&originHeight=358&originWidth=1019&size=50239&status=done&style=none&width=509.5" alt="image.png"></p>
+<p>（3）我就是关闭防火墙后发现可以正常访问了，确认好了根因，我们为了系统安全 需要重新开启防火墙，随后我们需要对访问80端口的tcp网络请求进行防火墙配置，我们需要首先重新启动防火墙</p>
+<p> <code>systemctl start firewalld.service</code></p>
+<p>然后输入配置防火墙的命令并查看配置后的防火墙策略:</p>
+<p>```bash</p>
+<p>firewall-cmd –zone=public –add-port=80/tcp –permanent</p>
+<p>firewall-cmd –permanent –list-ports </p>
+<p>```</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/dede34752fd4ee3367a3594f2cbab91f.png#align=left&display=inline&height=70&margin=[objectObject]&name=image.png&originHeight=139&originWidth=1186&size=15741&status=done&style=none&width=593" alt="image.png"></p>
+<p>完成后如图所示，</p>
+<p>（5）配置完成后重启防火墙，</p>
+<p><code>systemctl restart firewalld.service</code></p>
+<p>远程访问服务器上的网页已经OK了</p>
+<p>(6)若添加错了或想关闭端口</p>
+<p><code>firewall-cmd --zone=public --remove-port=端口号/协议 --permanent</code></p>
+<p>网站进不去的解决方法借鉴文章：<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/3ea51489882d1052e71bba43.html">https://jingyan.baidu.com/article/3ea51489882d1052e71bba43.html</a></p>
+<p># 六，配置服务文件参数</p>
+<p>服务目录 /etc/httpd</p>
+<p>配置文件 /etc/httpd/conf/httpd.conf</p>
+<p>网站数据目录 /var/www/html</p>
+<p>访问目录 /var/log/httpd/access_log</p>
+<p>错误日志 /var/log/httpd/access_log</p>
+<p>参数</p>
+<p>ServerRoot 服务目录</p>
+<p>ServerAdmin 管理员邮箱</p>
+<p>User 运行服务的用户</p>
+<p>Group 运行服务的用户组</p>
+<p>ServerName 网站服务器的域名</p>
+<p>DocumentRoot 网站数据目录</p>
+<p>Listen 监听的IP地址与端口号</p>
+<p>DirectoryIndex 默认的索引页面</p>
+<p>ErrorLog 访问日志文件</p>
+<p>CustomLog 访问日志文件</p>
+<p>Timeout 网页超时时间，默认为300秒。</p>
+<p>Include 需要加载的其他文件</p>
 
       
 	  
- 
-  <div class="category-all-page">
-    <div class="category-all-title">
-    TOTAL : 4
-    </div>
-  <style>
-        .category-list li{
-            display: inline-block;
-            margin: 0 1em .5em 0;
-            padding: 4px;
-            border: 1px solid green;
-            font-size: 1.2em;
-        }
-        .category-list a {
-            color: #ffffff;
-        }
-        .category-list-item {
-          background-color: #55daff;
-          border-radius: 15%;
-          opacity:0.5; 
-        }
-
-        .category-list-item:hover a {
-            color: #c16431;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .category-list-count {
-            margin-left: 2px;
-            font-size: .9em;
-        }
-        .article-entry ul li:before{
-            display: none;
-        }
-        
-        .tags {
-            max-width: 40em;
-            margin: 2em auto;
-            margin-top: 0em;
-        }
-        .tags a {
-            margin-right: 1em;
-            border-bottom: 1px solid blue;
-            line-height: 65px;
-            white-space: nowrap;
-        }
-        .tags a:hover {
-            border-bottom: 2px solid green;
-            font-style: italic;
-            color: #22323a;
-            text-decoration: none;
-        }
-    </style>
-
-    <div class="category-all">
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kali/">Kali</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/xss/">xss</a><span class="category-list-count">1</span></li></ul>
-    </div>
- 
-  </div>
-
 
 <!-- 《添加版权声明 -->
 <!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
@@ -301,16 +464,16 @@
     
     <br>
     <strong class="create-time">发布时间：</strong>
-    2021-07-16
+    2021-08-09
     <br>
     <strong class="update-time">最后更新：</strong>
-    2021-07-19
+    2021-08-09
     <br>
     <strong class="article-titles">本文标题：</strong>
-    <a href="https://vancomycin-g.github.io/2021/07/16/Kali-WIIFI密码暴力破解/" title="Kali-WIIFI密码暴力破解" target="_blank">Kali-WIIFI密码暴力破解</a>
+    <a href="https://vancomycin-g.github.io/2021/08/09/centos7安装apache服务，并解决一些问题/" title="" target="_blank"></a>
     <br>
     <strong class="article-url">本文链接：</strong>
-    <a href="https://vancomycin-g.github.io/2021/07/16/Kali-WIIFI密码暴力破解/" title="Kali-WIIFI密码暴力破解" target="_blank">https://vancomycin-g.github.io/2021/07/16/Kali-WIIFI密码暴力破解/</a>
+    <a href="https://vancomycin-g.github.io/2021/08/09/centos7安装apache服务，并解决一些问题/" title="" target="_blank">https://vancomycin-g.github.io/2021/08/09/centos7安装apache服务，并解决一些问题/</a>
     <br>
     <strong class="copyright">版权声明：</strong>
     本作品采用
@@ -360,35 +523,8 @@
 	
     <div class="article-info article-info-index">
       
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">kali</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Kali//" class="article-tag-list-link color5">Kali</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -401,18 +537,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/07/17/%E4%BA%92%E8%81%94%E7%BD%91ssh%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%A7%E8%87%B4%E6%80%9D%E8%B7%AF/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          互联网ssh登录Linux虚拟机大致思路
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/07/16/java%20string%E7%B1%BB%E6%9C%89%E5%85%B3%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java string类有关函数</div>
+    <a href="/2021/07/19/xss%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">xss笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -439,7 +566,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">青春不常在，抓紧谈恋爱！</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -456,7 +583,7 @@
   
 
   
-  <div id="SOHUCS" sid="Kali-WIIFI密码暴力破解" ></div> 
+  <div id="SOHUCS" sid="centos7安装apache服务，并解决一些问题" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({

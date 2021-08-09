@@ -8,31 +8,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://vancomycin-g.github.io">
-  <title>Kali-WIIFI密码暴力破解 | 虚无的博客</title>
+  <title>Archives: 2021/8 | 虚无的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一，准备工作1，安装好了kali-linux虚拟机。2，kali注册的用户身份为root,或者会更改为root用户。3，准备一个无线网卡。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Kali-WIIFI密码暴力破解">
-<meta property="og:url" content="https://vancomycin-g.github.io/2021/07/16/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/index.html">
+  <meta name="description" content="渗透与测试专业的小白，如有不足之处请指教。欢迎大家一起交流">
+<meta property="og:type" content="website">
+<meta property="og:title" content="虚无的博客">
+<meta property="og:url" content="https://vancomycin-g.github.io/archives/2021/08/index.html">
 <meta property="og:site_name" content="虚无的博客">
-<meta property="og:description" content="一，准备工作1，安装好了kali-linux虚拟机。2，kali注册的用户身份为root,或者会更改为root用户。3，准备一个无线网卡。">
+<meta property="og:description" content="渗透与测试专业的小白，如有不足之处请指教。欢迎大家一起交流">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/43e41fc6f71a9fc098e6eb6c1ae03122.png#align=left&display=inline&height=955&margin=[objectObject]&name=image.png&originHeight=955&originWidth=1013&size=39184&status=done&style=none&width=1013">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/18ef968f6627a483f1b64151723b5e28.png#align=left&display=inline&height=361&margin=[objectObject]&name=image.png&originHeight=361&originWidth=1450&size=72697&status=done&style=none&width=1450">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/ae62de35ee7b4534b544c5a35cee926c.png#align=left&display=inline&height=464&margin=[objectObject]&name=image.png&originHeight=464&originWidth=1450&size=126721&status=done&style=none&width=1450">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/a0c221064836a51546936c64f9820a7c.png#align=left&display=inline&height=335&margin=[objectObject]&name=image.png&originHeight=335&originWidth=1513&size=147580&status=done&style=none&width=1513">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/d030a452882b7ad1a2ae428e1a776604.png#align=left&display=inline&height=350&margin=[objectObject]&name=image.png&originHeight=350&originWidth=1495&size=155615&status=done&style=none&width=1495">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/f5b38dc40e4f527fd33a12a74bf25b17.png#align=left&display=inline&height=547&margin=[objectObject]&name=image.png&originHeight=547&originWidth=1985&size=294025&status=done&style=none&width=1985">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/2c95e27604ca8f103ca970ffe1ebe7a1.png#align=left&display=inline&height=324&margin=[objectObject]&name=image.png&originHeight=324&originWidth=1777&size=227924&status=done&style=none&width=1777">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/bff302571bd1fe9b171c9fa667c9bb7c.png#align=left&display=inline&height=70&margin=[objectObject]&name=image.png&originHeight=70&originWidth=2113&size=56138&status=done&style=none&width=2113">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/a0760e9ceaa9cdbe1cc49f73b771e742.png#align=left&display=inline&height=766&margin=[objectObject]&name=image.png&originHeight=766&originWidth=1405&size=80646&status=done&style=none&width=1405">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/59734fcf11b858819f1fbdd251404031.png#align=left&display=inline&height=159&margin=[objectObject]&name=image.png&originHeight=159&originWidth=1887&size=28970&status=done&style=none&width=1887">
-<meta property="article:published_time" content="2021-07-16T08:36:40.000Z">
-<meta property="article:modified_time" content="2021-07-18T16:09:52.944Z">
 <meta property="article:author" content="虚无">
-<meta property="article:tag" content="kali">
+<meta property="article:tag" content="渗透与测试,网络安全,web安全,Linux,mysql">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/43e41fc6f71a9fc098e6eb6c1ae03122.png#align=left&display=inline&height=955&margin=[objectObject]&name=image.png&originHeight=955&originWidth=1013&size=39184&status=done&style=none&width=1013">
   
   
     <link rel="icon" href="/img/mao.png">
@@ -187,289 +174,45 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<i class="fa fa-thumb-tack"></i>
-<font color=7D26CD>置顶</font>
-<span class="post-meta-divider">|</span>
-
-<article id="post-Kali-WIIFI密码暴力破解" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+  
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Kali-WIIFI密码暴力破解
-    </h1>
-  
-
-        
-        
-<a href="/2021/07/16/Kali-WIIFI%E5%AF%86%E7%A0%81%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2021-07-16T08:36:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-16</time>
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2021/08/09/centos7%E5%AE%89%E8%A3%85apache%E6%9C%8D%E5%8A%A1%EF%BC%8C%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-08-09T13:00:55.335Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-09</time>
 </a>
 
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-               ⋉(●本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次●)⋊
-        </span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>一，准备工作</strong><br>1，安装好了kali-linux虚拟机。<br>2，kali注册的用户身份为root,或者会更改为root用户。<br>3，准备一个无线网卡。</p>
-<span id="more"></span>
-
-<p><strong>二，打开虚拟机接入无线网卡</strong><br>1，以root身份运行终端模拟器。<br>2，为了避免网卡接入时出现扫描不到WiFi等其他问题（本人就出现了。。弄了好久才搞定），先把网卡接入到主机上。<br><img src="https://img-blog.csdnimg.cn/img_convert/43e41fc6f71a9fc098e6eb6c1ae03122.png#align=left&display=inline&height=955&margin=[objectObject]&name=image.png&originHeight=955&originWidth=1013&size=39184&status=done&style=none&width=1013" alt="image.png"><br>然后在主机上随便连接上一个WiFi后在连接到虚拟机。<br><img src="https://img-blog.csdnimg.cn/img_convert/18ef968f6627a483f1b64151723b5e28.png#align=left&display=inline&height=361&margin=[objectObject]&name=image.png&originHeight=361&originWidth=1450&size=72697&status=done&style=none&width=1450" alt="image.png"><br>如上图点击确定。<br><strong>三，判断网卡是否可以使用</strong><br>1，在模拟终端中输入iwconfig 用来查看网卡是否支持监听模式。<br><img src="https://img-blog.csdnimg.cn/img_convert/ae62de35ee7b4534b544c5a35cee926c.png#align=left&display=inline&height=464&margin=[objectObject]&name=image.png&originHeight=464&originWidth=1450&size=126721&status=done&style=none&width=1450" alt="image.png"><br>图中的若出现wlan0 应该就可以使用。此时mode:manage.<br>2，输入airmon-ng start wlan0<br><img src="https://img-blog.csdnimg.cn/img_convert/a0c221064836a51546936c64f9820a7c.png#align=left&display=inline&height=335&margin=[objectObject]&name=image.png&originHeight=335&originWidth=1513&size=147580&status=done&style=none&width=1513" alt="image.png"><br>3，然后再次输入iwconfig重新查看网卡状态<br><img src="https://img-blog.csdnimg.cn/img_convert/d030a452882b7ad1a2ae428e1a776604.png#align=left&display=inline&height=350&margin=[objectObject]&name=image.png&originHeight=350&originWidth=1495&size=155615&status=done&style=none&width=1495" alt="image.png"><br>此时，wlan0 中的mode变为了monitor就是监视功能开启了。<br>有的网卡名wlan0变为wlan0mon;要注意后面会用网卡名。<br>此时网卡就可以使用了。<br><strong>四，扫描wifi并监听，抓包。</strong><br>1，输入：airodump 网卡名<br><strong>开始扫描WiFi，按ctrl+c结束任务</strong></p>
-<p>BSSID为wifi的MAC地址，PWR为信号强弱程度，数值越小信号越强；#DATA为数据量，越大WiFi接入的设备就越多，CH为信道频率（频道），ESSID为wifi的名称，中文可能会有乱码。<br>2，注意选择WiFi时要以data数据量为第一参考。然后再参考信号强度。<br>选好后按ctrl+c停止扫描。<br>3，输入<br><strong>airodump-ng –bssid BSSID -c 信道频率（CH） -w 储存抓包存储的路径 wlan0mon</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/f5b38dc40e4f527fd33a12a74bf25b17.png#align=left&display=inline&height=547&margin=[objectObject]&name=image.png&originHeight=547&originWidth=1985&size=294025&status=done&style=none&width=1985" alt="image.png"></p>
-<p>图中彩线画的是接入WiFi的设备，当出现蓝线圈的<strong>WPA handshake,</strong> 时就代表抓包成功。<br>4.但，这是被动等待有新设备接入WiFi，这可能需要很长时间才能抓包成功，所以我们要主动出击。<br>再开一个终端，输入airepaly-ng -0 攻击次数 -a bssid -c 连接到WiFi的设备mac地址 网卡名<br>如<br><img src="https://img-blog.csdnimg.cn/img_convert/2c95e27604ca8f103ca970ffe1ebe7a1.png#align=left&display=inline&height=324&margin=[objectObject]&name=image.png&originHeight=324&originWidth=1777&size=227924&status=done&style=none&width=1777" alt="image.png"><br>(0 WiFi设备无限次数,-0 300则攻击300次。攻击原理是：先让设备掉线，设备会再自动连接，并发这个自动连接过程会进行三次握手，会发送tcp包（里面包含加密的密码数据），我方伪装成WiFi热点去窃取该数据包。我方窃取后即可用字典穷举法暴力破解加密的WiFi密码,<br>数据包里面的密码是哈希加密的，哈希加密只能正向)<br><strong>出现WPA handshake时，表示抓包成功</strong><br><strong>两个终端都按Ctrl+c停止，不然那边会一直断网</strong><br><strong>五，暴力破解。</strong><br>1，键入  <strong>aircrack-ng -a2 -b  bssid <strong>-w</strong> 字典路径 握手包路径 回车后开始爆破</strong><br><strong>如：</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/bff302571bd1fe9b171c9fa667c9bb7c.png#align=left&display=inline&height=70&margin=[objectObject]&name=image.png&originHeight=70&originWidth=2113&size=56138&status=done&style=none&width=2113" alt="image.png"><br><strong>然后就等待，看运气了</strong><br><strong>特别说明：暴力破解并不简单，需要足够强大的字典和时间，可以通过字典生成工具生成自己的字典，字典越强大越容易破解。</strong> 破解速度还与电脑算力有关。<br><img src="https://img-blog.csdnimg.cn/img_convert/a0760e9ceaa9cdbe1cc49f73b771e742.png#align=left&display=inline&height=766&margin=[objectObject]&name=image.png&originHeight=766&originWidth=1405&size=80646&status=done&style=none&width=1405" alt="image.png"><br><strong>这就没找到。。。。</strong><br>2，下面是另一种破解方式。<br> cowpatty -f 字典路径 -r 包的路径 -s wifi名字<br><img src="https://img-blog.csdnimg.cn/img_convert/59734fcf11b858819f1fbdd251404031.png#align=left&display=inline&height=159&margin=[objectObject]&name=image.png&originHeight=159&originWidth=1887&size=28970&status=done&style=none&width=1887" alt="image.png"><br>本文参考了<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44545251/article/details/100279827?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161502192116780271544099%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=161502192116780271544099&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-100279827.first_rank_v2_pc_rank_v29_10&utm_term=kaliwifi%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4">凡尘-追梦者</a>的博客，感谢！</p>
-
-      
-	  
- 
-  <div class="category-all-page">
-    <div class="category-all-title">
-    TOTAL : 4
-    </div>
-  <style>
-        .category-list li{
-            display: inline-block;
-            margin: 0 1em .5em 0;
-            padding: 4px;
-            border: 1px solid green;
-            font-size: 1.2em;
-        }
-        .category-list a {
-            color: #ffffff;
-        }
-        .category-list-item {
-          background-color: #55daff;
-          border-radius: 15%;
-          opacity:0.5; 
-        }
-
-        .category-list-item:hover a {
-            color: #c16431;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .category-list-count {
-            margin-left: 2px;
-            font-size: .9em;
-        }
-        .article-entry ul li:before{
-            display: none;
-        }
-        
-        .tags {
-            max-width: 40em;
-            margin: 2em auto;
-            margin-top: 0em;
-        }
-        .tags a {
-            margin-right: 1em;
-            border-bottom: 1px solid blue;
-            line-height: 65px;
-            white-space: nowrap;
-        }
-        .tags a:hover {
-            border-bottom: 2px solid green;
-            font-style: italic;
-            color: #22323a;
-            text-decoration: none;
-        }
-    </style>
-
-    <div class="category-all">
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kali/">Kali</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/xss/">xss</a><span class="category-list-count">1</span></li></ul>
-    </div>
- 
-  </div>
-
-
-<!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare">
-    <strong class="author">本文作者：</strong>
-    
-      虚无
-    
-    <br>
-    <strong class="create-time">发布时间：</strong>
-    2021-07-16
-    <br>
-    <strong class="update-time">最后更新：</strong>
-    2021-07-19
-    <br>
-    <strong class="article-titles">本文标题：</strong>
-    <a href="https://vancomycin-g.github.io/2021/07/16/Kali-WIIFI密码暴力破解/" title="Kali-WIIFI密码暴力破解" target="_blank">Kali-WIIFI密码暴力破解</a>
-    <br>
-    <strong class="article-url">本文链接：</strong>
-    <a href="https://vancomycin-g.github.io/2021/07/16/Kali-WIIFI密码暴力破解/" title="Kali-WIIFI密码暴力破解" target="_blank">https://vancomycin-g.github.io/2021/07/16/Kali-WIIFI密码暴力破解/</a>
-    <br>
-    <strong class="copyright">版权声明：</strong>
-    本作品采用
-    <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议">CC BY-NC-SA 4.0</a>
-    许可协议进行许可。转载请注明出处！
-    
-      <br>
-      <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
-    
-  </div>
-
-<!-- 添加版权声明》 -->
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/z.gif">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/w.gif">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-	
-    <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
+    	 
+        <div class="article-info info-on-right">
+          
+          
+
         </div>
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">kali</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Kali//" class="article-tag-list-link color5">Kali</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2021/07/17/%E4%BA%92%E8%81%94%E7%BD%91ssh%E7%99%BB%E5%BD%95Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%A7%E8%87%B4%E6%80%9D%E8%B7%AF/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          互联网ssh登录Linux虚拟机大致思路
-        
-      </div>
-    </a>
   
   
-    <a href="/2021/07/16/java%20string%E7%B1%BB%E6%9C%89%E5%85%B3%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java string类有关函数</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    目录，不存在的…
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
+    </div></section>
   
 
-  
+    
 
-  
-  <div id="SOHUCS" sid="Kali-WIIFI密码暴力破解" ></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "cyvyNjLtj",
-        conf: "6cceeb739e1a59b1784423c8fee65e05"
-    });
-</script>
-</script>
-  
-
-  
-
-  
 
           </div>
         </div>
@@ -541,8 +284,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
