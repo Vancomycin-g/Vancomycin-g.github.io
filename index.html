@@ -74,7 +74,7 @@
 			</ul>
 		</nav>
 		<nav>
-			<a>总文章数 7</a>
+			<a>总文章数 8</a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -728,6 +728,121 @@
 
 
   
+    <article id="post-详解虚拟机与主机之间相互ping不通的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/01/%E8%AF%A6%E8%A7%A3%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E4%B8%BB%E6%9C%BA%E4%B9%8B%E9%97%B4%E7%9B%B8%E4%BA%92ping%E4%B8%8D%E9%80%9A%E7%9A%84%E9%97%AE%E9%A2%98/">详解虚拟机Linux与主机之间相互ping不通的问题</a>
+    </h1>
+  
+
+        
+        
+<a href="/2021/08/01/%E8%AF%A6%E8%A7%A3%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E4%B8%BB%E6%9C%BA%E4%B9%8B%E9%97%B4%E7%9B%B8%E4%BA%92ping%E4%B8%8D%E9%80%9A%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-08-01T10:12:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-01</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一，虚拟机ping-虚拟机"><a href="#一，虚拟机ping-虚拟机" class="headerlink" title="一，虚拟机ping 虚拟机"></a>一，虚拟机ping 虚拟机</h1><p>一般只要虚拟机的网络连接方式都为NAT方式就没有毛病<br><img src="https://img-blog.csdnimg.cn/img_convert/c621295814376bcf3c8407ddf16c2628.png#height=272&id=ZTiRW&margin=[objectObject]&name=image.png&originHeight=543&originWidth=670&originalType=binary&size=43095&status=done&style=none&width=335" alt="image.png"></p>
+<h1 id="二，虚拟机ping主机若不通"><a href="#二，虚拟机ping主机若不通" class="headerlink" title="二，虚拟机ping主机若不通"></a>二，虚拟机ping主机若不通</h1><h2 id="一般是主机的防火墙的问题（Windows都有这个毛病）"><a href="#一般是主机的防火墙的问题（Windows都有这个毛病）" class="headerlink" title="一般是主机的防火墙的问题（Windows都有这个毛病）"></a>一般是主机的防火墙的问题（Windows都有这个毛病）</h2><h3 id="1，搜索控制面板"><a href="#1，搜索控制面板" class="headerlink" title="1，搜索控制面板"></a>1，搜索控制面板</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/486738e87418138e70fe748527f2b3e2.png#height=465&id=Rpgq9&margin=[objectObject]&name=image.png&originHeight=1155&originWidth=690&originalType=binary&size=371567&status=done&style=none&width=278" alt="image.png"></p>
+<h3 id="2，系统和安全-gt-防火墙-gt-高级系统设置-gt-入站规则"><a href="#2，系统和安全-gt-防火墙-gt-高级系统设置-gt-入站规则" class="headerlink" title="2，系统和安全-&gt;防火墙-&gt;高级系统设置-&gt;入站规则"></a>2，系统和安全-&gt;防火墙-&gt;高级系统设置-&gt;入站规则</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/4854030c2afd4c3fc11793bbb5235d7f.png#height=165&id=PJ7N3&margin=[objectObject]&name=image.png&originHeight=329&originWidth=1077&originalType=binary&size=66122&status=done&style=none&width=538.5" alt="image.png"><br><img src="https://img-blog.csdnimg.cn/img_convert/601e1bfdc63da2c7538e313376d21a59.png#height=299&id=XyGkf&margin=[objectObject]&name=image.png&originHeight=598&originWidth=1314&originalType=binary&size=116837&status=done&style=none&width=657" alt="image.png"></p>
+<h3 id="启动下面的，设置为允许。"><a href="#启动下面的，设置为允许。" class="headerlink" title="启动下面的，设置为允许。"></a>启动下面的，设置为允许。</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/65ba9464061b96da1ab2e0c61a604fc6.png#height=111&id=Kk4GN&margin=[objectObject]&name=image.png&originHeight=221&originWidth=1300&originalType=binary&size=67477&status=done&style=none&width=650" alt="image.png"><br><strong>3,若主机与虚拟机的子网掩码相同。并且上面设置也修改了还是不行的话，看下面的方法二。</strong></p>
+<h1 id="三，若以上简单方法还不行或主机不能ping虚拟机但虚拟机可以ping主机时"><a href="#三，若以上简单方法还不行或主机不能ping虚拟机但虚拟机可以ping主机时" class="headerlink" title="三，若以上简单方法还不行或主机不能ping虚拟机但虚拟机可以ping主机时"></a>三，若以上简单方法还不行或主机不能ping虚拟机但虚拟机可以ping主机时</h1><p><strong>（方法一和方法二任选其一就行，只是站在虚拟机与主机不同角度进行配置的）</strong></p>
+<h2 id="方法一在虚拟机上设置虚拟机网卡"><a href="#方法一在虚拟机上设置虚拟机网卡" class="headerlink" title="方法一在虚拟机上设置虚拟机网卡"></a>方法一在虚拟机上设置虚拟机网卡</h2><h3 id="1-win-R-打开cmd-输入ipconfig"><a href="#1-win-R-打开cmd-输入ipconfig" class="headerlink" title="1.win+R 打开cmd 输入ipconfig"></a>1.win+R 打开cmd 输入ipconfig</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/b1bc8c7bbb11fc705e8ca25fe91c261a.png#height=561&id=a7YkW&margin=[objectObject]&name=image.png&originHeight=1300&originWidth=1148&originalType=binary&size=174626&status=done&style=none&width=495" alt="image.png"><br>注意记住VMnet8的IP地以及子网掩码</p>
+<h3 id="在虚拟机上打开虚拟网络编辑器"><a href="#在虚拟机上打开虚拟网络编辑器" class="headerlink" title="在虚拟机上打开虚拟网络编辑器"></a>在虚拟机上打开虚拟网络编辑器</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/3dc0764634c52286730aa27c5c4a9194.png#height=132&id=TjKLM&margin=[objectObject]&name=image.png&originHeight=263&originWidth=534&originalType=binary&size=27406&status=done&style=none&width=267" alt="image.png"></p>
+<h3 id="点击更改设置，然后设置DHCP设置"><a href="#点击更改设置，然后设置DHCP设置" class="headerlink" title="点击更改设置，然后设置DHCP设置"></a>点击更改设置，然后设置DHCP设置</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/3e5a401037354a25c549671137807ab0.png#height=514&id=ZNscX&margin=[objectObject]&name=image.png&originHeight=1028&originWidth=1204&originalType=binary&size=125964&status=done&style=none&width=602" alt="image.png"></p>
+<h3 id="打勾使用本地DHCP服务，下面的子网IP，与子网掩码设置的与刚才查看的主机vm8一致"><a href="#打勾使用本地DHCP服务，下面的子网IP，与子网掩码设置的与刚才查看的主机vm8一致" class="headerlink" title="打勾使用本地DHCP服务，下面的子网IP，与子网掩码设置的与刚才查看的主机vm8一致"></a>打勾使用本地DHCP服务，下面的子网IP，与子网掩码设置的与刚才查看的主机vm8一致</h3><p>注意：给小白解释下，<strong>子网掩码哪段是255，代表的就是这段必须一致，是0的可以不一样</strong><br>例如；我的主机子网掩码为，225.225.225.0意思就是前前三位必须一样，ip最后一位我可以设置为0-255之间任意数，但不推荐设置过大的数，设置越大连入的虚拟机个数越少。若不懂就直接设置为0让电脑自己分配。因为我主机IP为192.168.18.1，那我就设置为192.168.18.0就行，<br>若子网掩码为255.255.0.0 那我虚拟IP可以设置为192.168.0.0依次类推。<br><img src="https://img-blog.csdnimg.cn/img_convert/200789d077f81a5480168c11927733e6.png#height=499&id=QtvhX&margin=[objectObject]&name=image.png&originHeight=998&originWidth=1194&originalType=binary&size=129356&status=done&style=none&width=597" alt="image.png"></p>
+<h3 id="设置好后保存就行了"><a href="#设置好后保存就行了" class="headerlink" title="设置好后保存就行了"></a>设置好后保存就行了</h3><h3 id="进阶版内容：（此部分看不看无所谓，上面的看懂就行，对于基础好的小伙伴或好学的可以看看）"><a href="#进阶版内容：（此部分看不看无所谓，上面的看懂就行，对于基础好的小伙伴或好学的可以看看）" class="headerlink" title="进阶版内容：（此部分看不看无所谓，上面的看懂就行，对于基础好的小伙伴或好学的可以看看）"></a>进阶版内容：（此部分看不看无所谓，上面的看懂就行，对于基础好的小伙伴或好学的可以看看）</h3><p>上面分好ip后可以进一步限制IP地址的分配：接着上面的步骤点击DHCP设置，可以精确到第四段设置ip的分配。还有租用时间（这个暂时没搞懂什么作用，有知道的大佬可以点拨一下）<br><img src="https://img-blog.csdnimg.cn/img_convert/f486501cf2c8ea789449eea5c4c575c7.png#height=261&id=vELaK&margin=[objectObject]&name=image.png&originHeight=522&originWidth=728&originalType=binary&size=37884&status=done&style=none&width=364" alt="image.png"></p>
+<h3 id="设置好后保存就行了-1"><a href="#设置好后保存就行了-1" class="headerlink" title="设置好后保存就行了"></a>设置好后保存就行了</h3><p>这时虚拟机与主机之间就可以通信了。</p>
+<h2 id="方法二在主机上配置虚拟网卡"><a href="#方法二在主机上配置虚拟网卡" class="headerlink" title="方法二在主机上配置虚拟网卡"></a>方法二在主机上配置虚拟网卡</h2><h3 id="1打开虚拟机，开启命令窗口后输入ifconfig"><a href="#1打开虚拟机，开启命令窗口后输入ifconfig" class="headerlink" title="1打开虚拟机，开启命令窗口后输入ifconfig"></a>1打开虚拟机，开启命令窗口后输入ifconfig</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/bc3aef07ea8932d328ff996b1638f3bd.png#height=368&id=tug9p&margin=[objectObject]&name=image.png&originHeight=736&originWidth=1532&originalType=binary&size=230710&status=done&style=none&width=766" alt="image.png"></p>
+<h4 id="上图中前面是IP地址，后面是子网掩码，记住这两部分"><a href="#上图中前面是IP地址，后面是子网掩码，记住这两部分" class="headerlink" title="上图中前面是IP地址，后面是子网掩码，记住这两部分"></a>上图中前面是IP地址，后面是子网掩码，记住这两部分</h4><h3 id="2，在主机上打开设置-gt-网络和Inter，点击更改适配器选项"><a href="#2，在主机上打开设置-gt-网络和Inter，点击更改适配器选项" class="headerlink" title="2，在主机上打开设置-&gt;网络和Inter，点击更改适配器选项"></a>2，在主机上打开设置-&gt;网络和Inter，点击更改适配器选项</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/b1737ce5be29b4ce4cece8795955ab90.png#height=674&id=AaBZW&margin=[objectObject]&name=image.png&originHeight=1347&originWidth=2268&originalType=binary&size=1040582&status=done&style=none&width=1134" alt="image.png"></p>
+<h3 id="3选择VMnet8"><a href="#3选择VMnet8" class="headerlink" title="3选择VMnet8,"></a>3选择VMnet8,</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/2a1acc4f3035604b4505fa1fcac7ee3a.png#height=99&id=YvUjt&margin=[objectObject]&name=image.png&originHeight=198&originWidth=1348&originalType=binary&size=46257&status=done&style=none&width=674" alt="image.png"></p>
+<h3 id="4左键属性，双击图中选中的"><a href="#4左键属性，双击图中选中的" class="headerlink" title="4左键属性，双击图中选中的"></a>4左键属性，双击图中选中的</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/d58d86b9e5ed48c38bd3d22d8f06e0ea.png#height=78&id=orGM2&margin=[objectObject]&name=image.png&originHeight=156&originWidth=558&originalType=binary&size=15371&status=done&style=none&width=279" alt="image.png"><br>ip地址填入虚拟机查找的，因为我的子网掩码为255.255.255.0 。前三位必须一样而最后最后一位可以从1-249之间选择<br>若子网掩码为255.255.0.0，虚拟机ip地址不变，那我这里IP地址可以设为192.168.(1-249).(1-249）括号里的在范围内随意设置<br><img src="https://img-blog.csdnimg.cn/img_convert/5b2648a240c01a6e66e0759824b8da14.png#height=574&id=N6mqb&margin=[objectObject]&name=image.png&originHeight=1147&originWidth=920&originalType=binary&size=69412&status=done&style=none&width=460" alt="image.png"><br>最后确定保存，若还不能ping，那就重启下电脑。</p>
+<h1 id="四，主机与虚拟机的IP与网关都没毛病时，重启下vM8虚拟网卡"><a href="#四，主机与虚拟机的IP与网关都没毛病时，重启下vM8虚拟网卡" class="headerlink" title="四，主机与虚拟机的IP与网关都没毛病时，重启下vM8虚拟网卡"></a>四，主机与虚拟机的IP与网关都没毛病时，重启下vM8虚拟网卡</h1><p>有时，前几天已经配置好了，想用时又发现不能ping了</p>
+<p>此时虚拟机可以与网关通信,并连接到外网,但是宿主机无法与虚拟机通信,ping显示超时,连接显示tcp无法握手.但能够ping通网关（如果有的自定义的话）<br><strong>左键禁止后再重启</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/99bdeca0c42430bc52f5ceb9ca425405.png#align=left&display=inline&height=343&margin=[objectObject]&name=image.png&originHeight=685&originWidth=1372&size=112605&status=done&style=none&width=686" alt="image.png"></p>
+<h1 id="最后，若本文对你有帮助可以点赞，留言交流。"><a href="#最后，若本文对你有帮助可以点赞，留言交流。" class="headerlink" title="最后，若本文对你有帮助可以点赞，留言交流。"></a>最后，若本文对你有帮助可以点赞，留言交流。</h1><p><a target="_blank" rel="noopener" href="https://www.yuque.com/docs/share/75f1f4cf-493a-4464-b0d9-044c21c8f672#%20%E3%80%8A%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E4%B8%BB%E6%9C%BA%E4%B9%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E9%97%AE%E9%A2%98%E3%80%8B">原文更新更快哟</a></p>
+
+      
+	  
+
+<!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+      
+    </div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/01/%E8%AF%A6%E8%A7%A3%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E4%B8%BB%E6%9C%BA%E4%B9%8B%E9%97%B4%E7%9B%B8%E4%BA%92ping%E4%B8%8D%E9%80%9A%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-xss笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1062,10 +1177,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">kali</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
              
@@ -1074,15 +1185,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">biao</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">xss</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">biao</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">kali</a>
               </li>
             
             <div class="clearfix"></div>
