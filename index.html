@@ -74,7 +74,7 @@
 			</ul>
 		</nav>
 		<nav>
-			<a>总文章数 8</a>
+			<a>总文章数 9</a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -566,9 +566,128 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/09/centos7%E5%AE%89%E8%A3%85apache%E6%9C%8D%E5%8A%A1,%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-Centos7-8安装Msql8并使用Navicat远程连接" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/10/Centos7-8%E5%AE%89%E8%A3%85Msql8%E5%B9%B6%E4%BD%BF%E7%94%A8Navicat%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">Centos7,8安装Msql8并使用Navicat远程连接</a>
+    </h1>
+  
+
+        
+        
+<a href="/2021/08/10/Centos7-8%E5%AE%89%E8%A3%85Msql8%E5%B9%B6%E4%BD%BF%E7%94%A8Navicat%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" class="archive-article-date">
+  	<time datetime="2021-08-10T12:04:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-10</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p><strong>本文章主要介绍centos7安装mysql8数据库，并使用Navicat进行运程可视化连接。</strong><br><strong>简单介绍centos8(阿里云服务器)安装mysql数据库，因为它比centos7简单啊。。。</strong></p>
+<h1 id="一，centos7MySQL安装"><a href="#一，centos7MySQL安装" class="headerlink" title="一，centos7MySQL安装"></a>一，centos7MySQL安装</h1><h2 id="1，首先需要下载官方yum源"><a href="#1，首先需要下载官方yum源" class="headerlink" title="1，首先需要下载官方yum源"></a>1，首先需要下载官方yum源</h2><p>清理下缓存：<code>yum clean all</code><br>下载:<code>wget [https://repo.mysql.com/mysql80-community-release-el7.rpm](https://repo.mysql.com/mysql80-community-release-el7.rpm)</code><br>若wget命令不识别则先执行：<code>yum -y install wget</code><br><img src="https://img-blog.csdnimg.cn/img_convert/bd8362848500d740cae42abe274b54ad.png#align=left&display=inline&height=284&margin=[objectObject]&name=image.png&originHeight=660&originWidth=1286&size=112380&status=done&style=none&width=553" alt="image.png"></p>
+<h2 id="2-安装yum源"><a href="#2-安装yum源" class="headerlink" title="2,安装yum源"></a>2,安装yum源</h2><p><code>yum -y install mysql80-community-release-el7.rpm</code><br>若遇到下面的情况执行：<code>rm -f /var/run/yum.pid </code>后重复上一步。<br><img src="https://img-blog.csdnimg.cn/img_convert/ec9873edf25ab3861cbdc01f8b879a04.png#align=left&display=inline&height=187&margin=[objectObject]&name=image.png&originHeight=479&originWidth=1291&size=75545&status=done&style=none&width=505" alt="image.png"></p>
+<h2 id="3-安装mysql服务"><a href="#3-安装mysql服务" class="headerlink" title="3.安装mysql服务"></a>3.安装mysql服务</h2><p>安装MySQL服务（这个过程可能有点慢，几百多M呢）<br><code>yum -y install mysql-community-server</code><br><img src="https://img-blog.csdnimg.cn/img_convert/4c85481db07ed11c4b6a0148a0e86696.png#align=left&display=inline&height=206&margin=[objectObject]&name=image.png&originHeight=411&originWidth=1305&size=68670&status=done&style=none&width=652.5" alt="image.png"></p>
+<h1 id="二，centos8安装mysql"><a href="#二，centos8安装mysql" class="headerlink" title="二，centos8安装mysql"></a>二，centos8安装mysql</h1><p>源文件下载就直接是默认8的版本<br><code>dnf -y install mysql-server</code></p>
+<h1 id="三-centos7-8配置mysql服务"><a href="#三-centos7-8配置mysql服务" class="headerlink" title="三. centos7,8配置mysql服务"></a>三. centos7,8配置mysql服务</h1><h2 id="1，先开启mysql-初次开启费点时间。"><a href="#1，先开启mysql-初次开启费点时间。" class="headerlink" title="1，先开启mysql,初次开启费点时间。"></a>1，先开启mysql,初次开启费点时间。</h2><p><code>systemctl start mysqld</code></p>
+<h2 id="2，查看登录密码"><a href="#2，查看登录密码" class="headerlink" title="2，查看登录密码"></a>2，查看登录密码</h2><p>初始化数据库的时候会为root设置一个默认密码，这个密码在mysqld.log文件中可以找到。<br>因为centos版本不同文件路径会有所不同，可以用<code>find  /var -name mysqld.log</code>命令查看路径。<br>（1）centos7有随机密码，要查看密码：<br><code>grep &#39;temporary password&#39; /var/log/mysqld.log</code><br><img src="https://img-blog.csdnimg.cn/img_convert/5906e4512f9672c950a08cd750da900e.png#align=left&display=inline&height=42&margin=[objectObject]&name=image.png&originHeight=136&originWidth=2044&size=34902&status=done&style=none&width=635" alt="image.png"><br>复制下来既可。后面会更改。<br>（2）centos8下载的mysql没有密码，回车既可<br>也可以运行下命令：<code>grep &#39;temporary password&#39; /var/log/</code><strong><code>mysql</code></strong><code>/mysqld.log</code><br>是没有回显的。<br><img src="https://img-blog.csdnimg.cn/img_convert/5b05e720b01aaab44d9abe9cc9143bb7.png#align=left&display=inline&height=71&margin=[objectObject]&name=image.png&originHeight=141&originWidth=1353&size=21912&status=done&style=none&width=676.5" alt="image.png"></p>
+<h2 id="3，登录数据库修改配置。"><a href="#3，登录数据库修改配置。" class="headerlink" title="3，登录数据库修改配置。"></a>3，登录数据库修改配置。</h2><p>登录数据库：<code>mysql -u root -p</code>输入密码，centos8回车既可。</p>
+<h3 id="1-修改密码"><a href="#1-修改密码" class="headerlink" title="(1) 修改密码"></a>(1) 修改密码</h3><p>刚进去必须先修改密码，但密码的要求很高有大小写数字，还有标点符号，可以通过一下命令降低要求</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> global validate_password.policy=0;</span><br><span class="line"><span class="built_in">set</span> global validate_password.length=4;</span><br></pre></td></tr></table></figure>
+<p>然后执行修改密码的命令：**<code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;新密码&#39;;</code>**</p>
+<h3 id="2-添加远程连接"><a href="#2-添加远程连接" class="headerlink" title="(2)添加远程连接"></a>(2)添加远程连接</h3><p>依次执行下面命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">update user <span class="built_in">set</span> host=<span class="string">&#x27;%&#x27;</span> <span class="built_in">where</span> user=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line">GRANT ALL ON *.* TO <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>若遇到 下图黄线那样报错：<code>You are not allowed to create a user with GRANT</code><br>再重新执行一遍命令既可。<br><img src="https://img-blog.csdnimg.cn/img_convert/0431a8346ae63d2f2fcb6ec34d7ec8ad.png#align=left&display=inline&height=218&margin=[objectObject]&name=image.png&originHeight=540&originWidth=1169&size=67714&status=done&style=none&width=471" alt="image.png"></p>
+<h3 id="3-修改密码加密方式"><a href="#3-修改密码加密方式" class="headerlink" title="(3)修改密码加密方式"></a>(3)修改密码加密方式</h3><p><strong>这个暂不修改，若连接不上再修改，或者下载新的工具：</strong><br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1zzEtzPaGJHuy53hkVW3lZQ">https://pan.baidu.com/s/1zzEtzPaGJHuy53hkVW3lZQ</a><br>提取码：ym1o<br>因为后面要连接Navicat,MySql8.0 版本 和 5.0 的加密规则不一样，而现在的可视化工具只支持旧的加密方式。否则更新工具<br><code>ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#39;密码&#39;;</code><br><img src="https://img-blog.csdnimg.cn/img_convert/7a6660114835632e199f69d9515bb23b.png#align=left&display=inline&height=39&margin=[objectObject]&name=image.png&originHeight=94&originWidth=1306&size=13075&status=done&style=none&width=540" alt="image.png"><br>完成所有操作后，执行<br><code>flush privileges;</code>刷新权限</p>
+<h1 id="四，重启数据库，尝试连接。"><a href="#四，重启数据库，尝试连接。" class="headerlink" title="四，重启数据库，尝试连接。"></a>四，重启数据库，尝试连接。</h1><h2 id="1-ctrl-D退出数据库，重启数据库："><a href="#1-ctrl-D退出数据库，重启数据库：" class="headerlink" title="1,ctrl+D退出数据库，重启数据库："></a><code>1,ctrl+D退出</code>数据库，重启数据库：</h2><p><code>systemctl restart mysqld</code></p>
+<h2 id="2-查看ip地址"><a href="#2-查看ip地址" class="headerlink" title="2,查看ip地址"></a>2,查看ip地址</h2><p>若是虚拟机Linux,连接前要保证电脑能够ping通Linux的。阿里服务器只要ip地址正确那肯定可以的。<br>若不行，参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51478862/article/details/116179264">传送门</a>1，<a href="https://vancomycin-g.github.io/2021/08/01/%E8%AF%A6%E8%A7%A3%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E4%B8%BB%E6%9C%BA%E4%B9%8B%E9%97%B4%E7%9B%B8%E4%BA%92ping%E4%B8%8D%E9%80%9A%E7%9A%84%E9%97%AE%E9%A2%98/">自己搭建的网站</a><br><img src="https://img-blog.csdnimg.cn/img_convert/f64f6539bbecbbc5d97da46d4ed6723d.png#align=left&display=inline&height=171&margin=[objectObject]&name=image.png&originHeight=416&originWidth=990&size=72563&status=done&style=none&width=408" alt="image.png"></p>
+<h2 id="3-打开Navicat，端口默认3306"><a href="#3-打开Navicat，端口默认3306" class="headerlink" title="3,打开Navicat，端口默认3306."></a>3,打开Navicat，端口默认3306.</h2><p><img src="https://img-blog.csdnimg.cn/img_convert/f1b0d4d5e3ce19f7459aa3c01c23f0c2.png#align=left&display=inline&height=180&margin=[objectObject]&name=image.png&originHeight=464&originWidth=903&size=21750&status=done&style=none&width=350" alt="image.png"><br>这样就行了。若连接失败继续往下看。</p>
+<h3 id="4，Navicat连接centos7失败"><a href="#4，Navicat连接centos7失败" class="headerlink" title="4，Navicat连接centos7失败"></a>4，Navicat连接centos7失败</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/673802fcef6a3a23b6e09537a92fc761.png#align=left&display=inline&height=187&margin=[objectObject]&name=image.png&originHeight=374&originWidth=1122&size=27213&status=done&style=none&width=561" alt="image.png"><br>大多数远程连接失败的原因是防火墙没有配置好。<br>测试下关闭放火墙<br><code>systemctl stop firewalld.service</code><br>再重新连接，会连接成功，那肯定是防火墙的原因了<br>配置防火墙</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">开启服务器：systemctl start firewalld.service </span><br><span class="line">添加进站规则：firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br><span class="line">重启防火墙：systemctl restart firewalld.service </span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/4715b1f4774a21911cb2941e04dc241f.png#align=left&display=inline&height=85&margin=[objectObject]&name=image.png&originHeight=170&originWidth=1266&size=24525&status=done&style=none&width=633" alt="image.png"><br>然后就连接成功了。<br><img src="https://img-blog.csdnimg.cn/img_convert/4cf62b031b37199ce9debcfb8ef23752.png#align=left&display=inline&height=116&margin=[objectObject]&name=image.png&originHeight=232&originWidth=587&size=13155&status=done&style=none&width=293.5" alt="image.png"></p>
+<h3 id="5，Navicat连接centos8-阿里服务器-失败"><a href="#5，Navicat连接centos8-阿里服务器-失败" class="headerlink" title="5，Navicat连接centos8(阿里服务器)失败"></a>5，Navicat连接centos8(阿里服务器)失败</h3><p>阿里服务器比我们虚拟机多了一层防火墙。<br>重复4中的命令。然后登录阿里云官网，进入控制台-&gt;实例-&gt;安全组，点击配置规则。<br><img src="https://img-blog.csdnimg.cn/img_convert/b9c0c601c6d0c903aeafa6911d499722.png#align=left&display=inline&height=63&margin=[objectObject]&name=image.png&originHeight=220&originWidth=1548&size=41483&status=done&style=none&width=443" alt="image.png"><br>手动添加保存。<br><img src="https://img-blog.csdnimg.cn/img_convert/bc1e5bf6cc3781e76e2defe1325c850a.png#align=left&display=inline&height=117&margin=[objectObject]&name=image.png&originHeight=424&originWidth=2011&size=74151&status=done&style=none&width=553" alt="image.png"><br>连接成功。<br><img src="https://img-blog.csdnimg.cn/img_convert/089761e6eff5214c84396e128d61532e.png#align=left&display=inline&height=139&margin=[objectObject]&name=image.png&originHeight=278&originWidth=398&size=11629&status=done&style=none&width=199" alt="image.png"><br>参考文章：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34501666/article/details/113121693">https://blog.csdn.net/weixin_34501666/article/details/113121693</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangbinlong/article/details/109777234">https://blog.csdn.net/zhangbinlong/article/details/109777234</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1592379#:~:text=MySQL%E8%AE%BE%E7%BD%AE%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%20%E5%9C%A8MySQL%20Server%E7%AB%AF%EF%BC%8C%E6%89%A7%E8%A1%8Cmysql,%E5%91%BD%E4%BB%A4%E8%BF%9B%E5%85%A5mysql%20%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E3%80%82%20%E4%BD%BF%E7%94%A8grant%E5%91%BD%E4%BB%A4%E7%94%A8%E6%9D%A5%E5%BB%BA%E7%AB%8B%E6%96%B0%E7%94%A8%E6%88%B7%EF%BC%8C%E6%8C%87%E5%AE%9A%E7%94%A8%E6%88%B7%E5%8F%A3%E4%BB%A4%E5%B9%B6%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E3%80%82">修改密码</a></p>
+
+      
+	  
+
+<!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+      
+    </div>
+	
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
@@ -591,7 +710,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/09/centos7%E5%AE%89%E8%A3%85apache%E6%9C%8D%E5%8A%A1,%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/08/10/Centos7-8%E5%AE%89%E8%A3%85Msql8%E5%B9%B6%E4%BD%BF%E7%94%A8Navicat%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">展开全文 >></a>
         </p>
       
 
@@ -674,11 +793,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
         		</li>
       		
 		</ul>
@@ -1177,11 +1296,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">kali</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">biao</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1190,14 +1317,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">biao</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">kali</a>
               </li>
             
             <div class="clearfix"></div>
